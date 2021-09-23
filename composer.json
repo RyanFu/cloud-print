@@ -1,0 +1,39 @@
+{
+  "name": "whereof/cloud-print",
+  "license": "MIT",
+  "description": "非官方云小票机SDK，支持飞鹅云，芯烨云，易联云，快递100，映美云，中午云，佳博云，365智能云打印等",
+  "homepage": "https://github.com/whereof/cloud-print",
+  "keywords": [
+    "Cloud Print",
+    "云打印机",
+    "云小票机",
+    "飞鹅云",
+    "芯烨云",
+    "易联云",
+    "快递100",
+    "映美云",
+    "佳博云",
+    "365智能云打印",
+    "中午云"
+  ],
+  "authors": [
+    {
+      "name": "whereof",
+      "email": "wangzhiqiang1224@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "whereof\\cloudPrint\\": "src"
+    }
+  },
+  "require": {
+    "php": ">7.0",
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "6.*|7.*",
+    "pimple/pimple": "^3.0",
+    "symfony/cache": "*",
+    "whereof/basis": "^1.0",
+    "ramsey/uuid": "*"
+  }
+}
