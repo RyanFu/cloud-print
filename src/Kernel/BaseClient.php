@@ -4,6 +4,9 @@
 namespace whereof\cloudPrint\Kernel;
 
 
+use whereof\cloudPrint\Kernel\Interfaces\CacheInterface;
+use whereof\Helper\ArrayHelper;
+use whereof\Helper\StrHelper;
 use whereof\HttpClient;
 
 
@@ -32,5 +35,18 @@ class BaseClient
     {
         $this->app    = $app;
         $this->config = $app->getConfig();
+    }
+
+    /**
+     * @return FileCache
+     * @throws \Exception
+     */
+    public function cache()
+    {
+        $cache = ArrayHelper::getValue($this->config, 'cache');
+        if ($cache instanceof CacheInterface) {
+            return $cache;
+        }
+        return new FileCache();
     }
 }

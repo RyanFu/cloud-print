@@ -5,8 +5,8 @@ namespace whereof\cloudPrint\Jolimark;
 
 
 use whereof\cloudPrint\Kernel\BaseClient;
+use whereof\cloudPrint\Kernel\Interfaces\CacheInterface;
 use whereof\cloudPrint\Kernel\Support\Timer;
-use whereof\SymfonyCache;
 
 /**
  * Class JolimarkClient
@@ -14,8 +14,6 @@ use whereof\SymfonyCache;
  */
 class JolimarkClient extends BaseClient
 {
-
-    use SymfonyCache;
     /**
      * @var string
      */
@@ -39,7 +37,7 @@ class JolimarkClient extends BaseClient
         $public_params = [
             'app_id' => $this->config['app_id'],
         ];
-        if ($action != 'mcp/v2/sys/GetAccessToken'){
+        if ($action != 'mcp/v2/sys/GetAccessToken') {
             $private_params['access_token'] = $this->accessToken();
         }
         $params = array_filter(array_merge($public_params, $private_params));
@@ -52,12 +50,13 @@ class JolimarkClient extends BaseClient
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Symfony\Component\Cache\Exception\CacheException
+     * @throws \Exception
      */
     protected function accessToken()
     {
         $key = md5($this->config['app_id'] . $this->config['app_key']);
-        if ($this->hasCache($key)){
-            return $this->getCache($key);
+        if ($this->cache()->hasCache($key)) {
+            return $this->cache()->getCache($key);
         }
         $time   = Timer::timeStamp();
         $params = [
@@ -70,7 +69,7 @@ class JolimarkClient extends BaseClient
         if (empty($data['return_data']['access_token'])) {
             return $resp;
         }
-        $this->setCache($key, $data['return_data']['access_token'], $data['return_data']['expires_in']);
+        $this->cache()->setCache($key, $data['return_data']['access_token'], $data['return_data']['expires_in']);
         return $data['return_data']['access_token'];
     }
 
@@ -90,12 +89,5 @@ class JolimarkClient extends BaseClient
         return strtoupper(md5($str));
     }
 
-    /**
-     * @return mixed
-     */
-    protected function systemAdapter()
-    {
-        $directory = $this->config['cache']['path'] ?? '.runtime/cache/';
-        return new \Symfony\Component\Cache\Adapter\FilesystemAdapter('', 0, $directory);
-    }
+
 }
