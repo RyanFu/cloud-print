@@ -1,3 +1,6 @@
+
+[![Latest Stable Version](http://poser.pugx.org/whereof/cloud-print/v)](https://packagist.org/packages/whereof/cloud-print) [![Total Downloads](http://poser.pugx.org/whereof/cloud-print/downloads)](https://packagist.org/packages/whereof/cloud-print) [![Latest Unstable Version](http://poser.pugx.org/whereof/cloud-print/v/unstable)](https://packagist.org/packages/whereof/cloud-print) [![License](http://poser.pugx.org/whereof/cloud-print/license)](https://packagist.org/packages/whereof/cloud-print) [![PHP Version Require](http://poser.pugx.org/whereof/cloud-print/require/php)](https://packagist.org/packages/whereof/cloud-print)
+
 ## 安装
 
 ~~~~
