@@ -3,9 +3,8 @@
 
 namespace whereof\cloudPrint\Kernel;
 
-
-use Symfony\Component\Cache\Adapter\FilesystemAdapter;
-use Symfony\Component\Cache\Exception\CacheException;
+use whereof\Cache\CacheManager;
+use whereof\Cache\Driver;
 use whereof\cloudPrint\Kernel\Interfaces\CacheInterface;
 
 /**
@@ -24,56 +23,48 @@ class FileCache implements CacheInterface
      */
     public function setCache($key, $value, int $ttl = 0)
     {
-        $item = $this->getSystemAdapter()->getItem($key);
-        $item->set($value);
-        if ($ttl)
-            $item->expiresAfter($ttl);
-        return $this->getSystemAdapter()->save($item);
+        return $this->getSystemAdapter()->set($key, $value, $ttl);
     }
 
     /**
      * 获取缓存
      * @param $key
      * @return mixed
-     * @throws CacheException
      */
     public function getCache($key)
     {
-        $item = $this->getSystemAdapter()->getItem($key);
-        return $item->get();
+        return $this->getSystemAdapter()->get($key);
     }
 
     /**
      * 判断缓存是否存在
      * @param $key
      * @return mixed
-     * @throws CacheException
      */
     public function hasCache($key)
     {
-        $item = $this->getSystemAdapter()->getItem($key);
-        return $item->isHit();
+        return $this->getSystemAdapter()->has($key);
     }
 
     /**
      * 删除缓存
      * @param $key
      * @return bool
-     * @throws CacheException
      */
     public function deleteCache($key)
     {
-        return $this->getSystemAdapter()->deleteItem($key);
+        return $this->getSystemAdapter()->delete($key);
     }
 
 
     /**
-     * new \Symfony\Component\Cache\Adapter\MemcachedAdapter((new \memcached())->addServer("127.0.0.1",11211));
-     * new \Symfony\Component\Cache\Adapter\RedisAdapter((new \Redis())->connect("127.0.0.1",6379));
-     * @return FilesystemAdapter
+     * @return Driver
      */
     private function getSystemAdapter()
     {
-        return new FilesystemAdapter();
+        return (new CacheManager())->driver('file', [
+            'prefix' => 'cloud_print_',
+            'path'   => './cache',
+        ]);
     }
 }

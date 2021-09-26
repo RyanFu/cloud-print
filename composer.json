@@ -32,8 +32,8 @@
     "ext-json": "*",
     "guzzlehttp/guzzle": "6.*|7.*",
     "pimple/pimple": "^3.0",
-    "symfony/cache": "*",
     "whereof/basis": "^1.0",
-    "ramsey/uuid": "*"
+    "ramsey/uuid": "*",
+    "whereof/cache": "^1.0"
   }
 }
