@@ -62,9 +62,9 @@ class FileCache implements CacheInterface
      */
     private function getSystemAdapter()
     {
-        return (new CacheManager())->driver('file', [
-            'prefix' => 'cloud_print_',
-            'path'   => './cache',
+       return (new CacheManager())->driver('file', [
+            'prefix' => 'cloud_print',
+            'path'   => './.cache',
         ]);
     }
 }
