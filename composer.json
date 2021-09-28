@@ -1,7 +1,7 @@
 {
   "name": "whereof/cloud-print",
   "license": "MIT",
-  "description": "非官方云小票机SDK，支持飞鹅云，芯烨云，易联云，快递100，映美云，中午云，佳博云，365智能云打印等",
+  "description": "非官方云小票机SDK，支持飞鹅云，芯烨云，易联云，快递100，映美云，中午云，佳博云，优声云,365智能云打印等",
   "homepage": "https://github.com/whereof/cloud-print",
   "keywords": [
     "Cloud Print",
@@ -14,7 +14,8 @@
     "映美云",
     "佳博云",
     "365智能云打印",
-    "中午云"
+    "中午云",
+    "优声云"
   ],
   "authors": [
     {

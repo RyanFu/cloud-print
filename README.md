@@ -1,4 +1,4 @@
-> 非官方云小票机SDK，支持飞鹅云，芯烨云，易联云，快递100，映美云，中午云，佳博云，365智能云打印等
+> 非官方云小票机SDK，支持飞鹅云，芯烨云，易联云，快递100，映美云，中午云，佳博云，优声云,365智能云打印等
 
 [![Latest Stable Version](http://poser.pugx.org/whereof/cloud-print/v)](https://packagist.org/packages/whereof/cloud-print) [![Total Downloads](http://poser.pugx.org/whereof/cloud-print/downloads)](https://packagist.org/packages/whereof/cloud-print) [![Latest Unstable Version](http://poser.pugx.org/whereof/cloud-print/v/unstable)](https://packagist.org/packages/whereof/cloud-print) [![License](http://poser.pugx.org/whereof/cloud-print/license)](https://packagist.org/packages/whereof/cloud-print) [![PHP Version Require](http://poser.pugx.org/whereof/cloud-print/require/php)](https://packagist.org/packages/whereof/cloud-print)
 
@@ -18,6 +18,7 @@ composer require whereof/cloud-print
 - [佳博云](https://dev.poscom.cn/)
 - [365智能云打印](http://printcenter.cn/)
 - [中午云](http://www.zhongwu.co/)
+- [优声云](https://www.ushengyun.com/)
 
 ## demo代码(仓库中demo目录)
 
