@@ -65,7 +65,7 @@ $printer->clean([
 ]);
 
 //取消所有未打印订单
-$printer->clean([
+$printer->cleanAll([
     'machine_code' => '',//易联云打印机终端号
 ]);
 
