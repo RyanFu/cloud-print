@@ -7,9 +7,9 @@
 
 namespace whereof\cloudPrint\Test;
 
+use GuzzleHttp\Client;
 use PHPUnit\Framework\TestCase;
 use whereof\cloudPrint\Factory;
-
 
 /**
  * Class BaseTest
@@ -18,10 +18,25 @@ use whereof\cloudPrint\Factory;
  */
 class BaseTest extends TestCase
 {
-
+    /**
+     *
+     */
     public function testFactory()
     {
         $this->assertEquals(1, 1);
+    }
+
+
+    /**
+     * @param $name
+     * @param $app
+     * @return \Mockery\Mock
+     */
+    public function mockApiClient($name, $app)
+    {
+        $client = \Mockery::mock($name, [$app])->makePartial();
+        $client->allows()->getHttpClient()->andReturn(\Mockery::mock(Client::class));
+        return $client;
     }
 
     /**
@@ -30,8 +45,8 @@ class BaseTest extends TestCase
     public function Feieyun()
     {
         return Factory::Feieyun([
-            'user' => '',
-            'ukey' => '',
+            'user' => 'dasdl',
+            'ukey' => 'daskdlask',
         ]);
     }
 
