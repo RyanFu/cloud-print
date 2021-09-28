@@ -7,6 +7,7 @@ namespace whereof\cloudPrint\Printcenter;
 use whereof\cloudPrint\Kernel\Interfaces\PrinterInterface;
 
 /**
+ * http://printcenter.cn/
  * Class Printer
  * @package whereof\cloudPrint\Printcenter
  */
