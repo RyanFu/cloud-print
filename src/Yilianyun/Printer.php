@@ -17,7 +17,7 @@ class Printer extends YilianyunClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function register($private_params)
     {
@@ -30,7 +30,7 @@ class Printer extends YilianyunClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function delete($private_params)
     {
@@ -43,7 +43,7 @@ class Printer extends YilianyunClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function status($private_params)
     {
@@ -55,7 +55,7 @@ class Printer extends YilianyunClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function restart($private_params)
     {
@@ -67,7 +67,7 @@ class Printer extends YilianyunClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function setSound($private_params)
     {
@@ -79,7 +79,7 @@ class Printer extends YilianyunClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function setVoice($private_params)
     {
@@ -91,7 +91,7 @@ class Printer extends YilianyunClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function deleteVoice($private_params)
     {
@@ -104,7 +104,7 @@ class Printer extends YilianyunClient implements PrinterInterface
      * @param $type
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function print($private_params, $type)
     {
@@ -122,7 +122,7 @@ class Printer extends YilianyunClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function textPrint($private_params)
     {
@@ -134,7 +134,7 @@ class Printer extends YilianyunClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function picPrint($private_params)
     {
@@ -146,7 +146,7 @@ class Printer extends YilianyunClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function expressPrint($private_params)
     {
@@ -158,7 +158,7 @@ class Printer extends YilianyunClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function clean($private_params)
     {
@@ -170,7 +170,7 @@ class Printer extends YilianyunClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function cleanAll($private_params)
     {
@@ -182,7 +182,7 @@ class Printer extends YilianyunClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function orderState($private_params)
     {
@@ -194,7 +194,7 @@ class Printer extends YilianyunClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function orderList($private_params)
     {

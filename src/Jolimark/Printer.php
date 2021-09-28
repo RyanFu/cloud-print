@@ -20,7 +20,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function register($private_params)
     {
@@ -32,7 +32,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function isRegister($private_params)
     {
@@ -44,7 +44,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function delete($private_params)
     {
@@ -57,7 +57,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function status($private_params)
     {
@@ -70,7 +70,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $type
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function print($private_params, $type)
     {
@@ -131,7 +131,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function urlPrint($private_params)
     {
@@ -143,7 +143,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function picPrint($private_params)
     {
@@ -156,7 +156,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function html2Print($private_params)
     {
@@ -168,7 +168,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function htmlPrint($private_params)
     {
@@ -180,7 +180,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function grayPrint($private_params)
     {
@@ -193,7 +193,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function pointTextPrint($private_params)
     {
@@ -204,7 +204,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function labelPrint($private_params)
     {
@@ -216,7 +216,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function expressPrint($private_params)
     {
@@ -228,7 +228,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function printTemp($private_params)
     {
@@ -240,7 +240,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function printEsc($private_params)
     {
@@ -252,7 +252,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function filePrint($private_params)
     {
@@ -263,7 +263,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function fileByUrlPrint($private_params)
     {
@@ -275,7 +275,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function invoicePrint($private_params)
     {
@@ -288,7 +288,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function clean($private_params)
     {
@@ -300,7 +300,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function orderState($private_params)
     {
@@ -312,7 +312,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function orderNotPrint($private_params)
     {

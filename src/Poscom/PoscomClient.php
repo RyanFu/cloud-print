@@ -23,7 +23,6 @@ class PoscomClient extends BaseClient
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
      */
     public function request($method, $action, $private_params)
     {

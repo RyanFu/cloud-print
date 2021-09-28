@@ -19,7 +19,6 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
      */
     public function group($private_params)
     {
@@ -31,7 +30,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     *
      */
     public function addGroup($private_params)
     {
@@ -43,7 +42,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function updateGroup($private_params)
     {
@@ -55,7 +54,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function delGroup($private_params)
     {
@@ -68,7 +67,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function register($private_params)
     {
@@ -80,7 +79,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function update($private_params)
     {
@@ -92,7 +91,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function delete($private_params)
     {
@@ -104,7 +103,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function status($private_params)
     {
@@ -116,7 +115,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function listTemplate($private_params)
     {
@@ -128,7 +127,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function setTempletPrint($private_params)
     {
@@ -141,7 +140,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $type
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function print($private_params, $type = '')
     {
@@ -154,7 +153,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function clean($private_params)
     {
@@ -166,7 +165,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function orderState($private_params)
     {
@@ -178,7 +177,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function setVoice($private_params)
     {
@@ -190,7 +189,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
+     * 
      */
     public function setVoiceType($private_params)
     {

@@ -7,7 +7,6 @@ namespace whereof\cloudPrint\Yilianyun;
 use Ramsey\Uuid\Uuid;
 use whereof\cloudPrint\Kernel\BaseClient;
 use whereof\cloudPrint\Kernel\Support\Timer;
-use whereof\SymfonyCache;
 
 /**
  * Class YilianyunClient
@@ -15,8 +14,6 @@ use whereof\SymfonyCache;
  */
 class YilianyunClient extends BaseClient
 {
-
-    use SymfonyCache;
 
     /**
      * @var string
@@ -28,7 +25,6 @@ class YilianyunClient extends BaseClient
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
      * @throws \Exception
      */
     public function request($action, $private_params)
@@ -51,7 +47,6 @@ class YilianyunClient extends BaseClient
     /**
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
      * @throws \Exception
      */
     protected function accessToken()

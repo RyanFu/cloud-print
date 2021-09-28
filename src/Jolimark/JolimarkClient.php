@@ -5,7 +5,6 @@ namespace whereof\cloudPrint\Jolimark;
 
 
 use whereof\cloudPrint\Kernel\BaseClient;
-use whereof\cloudPrint\Kernel\Interfaces\CacheInterface;
 use whereof\cloudPrint\Kernel\Support\Timer;
 
 /**
@@ -29,7 +28,6 @@ class JolimarkClient extends BaseClient
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
      */
     public function request($method, $action, $private_params)
     {
@@ -49,7 +47,6 @@ class JolimarkClient extends BaseClient
     /**
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Symfony\Component\Cache\Exception\CacheException
      * @throws \Exception
      */
     protected function accessToken()
