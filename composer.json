@@ -23,11 +23,6 @@
       "email": "wangzhiqiang1224@gmail.com"
     }
   ],
-  "autoload": {
-    "psr-4": {
-      "whereof\\cloudPrint\\": "src"
-    }
-  },
   "require": {
     "php": ">=7.0",
     "ext-json": "*",
@@ -36,5 +31,18 @@
     "whereof/basis": "^1.0",
     "ramsey/uuid": "*",
     "whereof/cache": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6|^7|^8|^9"
+  },
+  "autoload": {
+    "psr-4": {
+      "whereof\\cloudPrint\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "whereof\\cloudPrint\\Test\\": "tests/"
+    }
   }
 }
