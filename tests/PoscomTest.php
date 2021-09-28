@@ -89,14 +89,14 @@ class PoscomTest extends BaseTest
         $this->methodPrivateParams('status', $private_params);
     }
 
-    public function testclean()
-    {
-        $private_params = [
-            'deviceID' => '',
-            'all'      => '',
-        ];
-        $this->methodPrivateParams('clean', $private_params);
-    }
+//    public function testclean()
+//    {
+//        $private_params = [
+//            'deviceID' => '',
+//            'all'      => '',
+//        ];
+//        $this->methodPrivateParams('clean', $private_params);
+//    }
 
     public function testprint()
     {
