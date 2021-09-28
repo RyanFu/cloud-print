@@ -7,23 +7,18 @@
 
 namespace whereof\cloudPrint\Test;
 
-use PHPUnit\Framework\TestCase;
-use whereof\cloudPrint\Factory;
 
 /**
  * Class FactoryTest
  * @author zhiqiang
  * @package whereof\cloudPrint\Test
  */
-class FactoryTest extends TestCase
+class FactoryTest extends BaseTest
 {
 
     public function testFeieyun()
     {
-        $app = Factory::Feieyun([
-            'user' => '',
-            'ukey' => '',
-        ]);
+        $app = $this->Feieyun();
         $this->assertInstanceOf(\whereof\cloudPrint\Feieyun\AppContainer::class, $app);
         $printer = $app->printer;
         $this->assertInstanceOf(\whereof\cloudPrint\Feieyun\Printer::class, $printer);
@@ -31,10 +26,7 @@ class FactoryTest extends TestCase
 
     public function testJolimark()
     {
-        $app = Factory::Jolimark([
-            'app_id'  => '',
-            'app_key' => '',
-        ]);
+        $app = $this->Jolimark();
         $this->assertInstanceOf(\whereof\cloudPrint\Jolimark\AppContainer::class, $app);
         $printer = $app->printer;
         $this->assertInstanceOf(\whereof\cloudPrint\Jolimark\Printer::class, $printer);
@@ -42,10 +34,7 @@ class FactoryTest extends TestCase
 
     public function testKuaidi100()
     {
-        $app = Factory::Kuaidi100([
-            'key'    => '',
-            'secret' => '',
-        ]);
+        $app = $this->Kuaidi100();
         $this->assertInstanceOf(\whereof\cloudPrint\Kuaidi100\AppContainer::class, $app);
         $printer = $app->printer;
         $this->assertInstanceOf(\whereof\cloudPrint\Kuaidi100\Printer::class, $printer);
@@ -53,10 +42,7 @@ class FactoryTest extends TestCase
 
     public function testPoscom()
     {
-        $app = Factory::Poscom([
-            'memberCode' => '',
-            'apiKey'     => '',
-        ]);
+        $app = $this->Poscom();
         $this->assertInstanceOf(\whereof\cloudPrint\Poscom\AppContainer::class, $app);
         $printer = $app->printer;
         $this->assertInstanceOf(\whereof\cloudPrint\Poscom\Printer::class, $printer);
@@ -64,9 +50,7 @@ class FactoryTest extends TestCase
 
     public function testPrintcenter()
     {
-        $app = Factory::Printcenter([
-            'key' => '',
-        ]);
+        $app = $this->Printcenter();
         $this->assertInstanceOf(\whereof\cloudPrint\Printcenter\AppContainer::class, $app);
         $printer = $app->printer;
         $this->assertInstanceOf(\whereof\cloudPrint\Printcenter\Printer::class, $printer);
@@ -74,9 +58,7 @@ class FactoryTest extends TestCase
 
     public function testUshengyun()
     {
-        $app = Factory::Ushengyun([
-            'key' => '',
-        ]);
+        $app = $this->Ushengyun();
         $this->assertInstanceOf(\whereof\cloudPrint\Ushengyun\AppContainer::class, $app);
         $printer = $app->printer;
         $this->assertInstanceOf(\whereof\cloudPrint\Ushengyun\Printer::class, $printer);
@@ -84,9 +66,7 @@ class FactoryTest extends TestCase
 
     public function testXpyun()
     {
-        $app = Factory::Xpyun([
-            'key' => '',
-        ]);
+        $app = $this->Xpyun();
         $this->assertInstanceOf(\whereof\cloudPrint\Xpyun\AppContainer::class, $app);
         $printer = $app->printer;
         $this->assertInstanceOf(\whereof\cloudPrint\Xpyun\Printer::class, $printer);
@@ -94,9 +74,7 @@ class FactoryTest extends TestCase
 
     public function testYilianyun()
     {
-        $app = Factory::Yilianyun([
-            'key' => '',
-        ]);
+        $app = $this->Yilianyun();
         $this->assertInstanceOf(\whereof\cloudPrint\Yilianyun\AppContainer::class, $app);
         $printer = $app->printer;
         $this->assertInstanceOf(\whereof\cloudPrint\Yilianyun\Printer::class, $printer);
@@ -104,9 +82,7 @@ class FactoryTest extends TestCase
 
     public function testZhongwuyun()
     {
-        $app = Factory::Zhongwuyun([
-            'key' => '',
-        ]);
+        $app = $this->Zhongwuyun();
         $this->assertInstanceOf(\whereof\cloudPrint\Zhongwuyun\AppContainer::class, $app);
         $printer = $app->printer;
         $this->assertInstanceOf(\whereof\cloudPrint\Zhongwuyun\Printer::class, $printer);
