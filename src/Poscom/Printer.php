@@ -7,6 +7,7 @@ namespace whereof\cloudPrint\Poscom;
 use whereof\cloudPrint\Kernel\Interfaces\PrinterInterface;
 
 /**
+ * https://dev.poscom.cn
  * Class Printer
  * @package whereof\cloudPrint\Poscom
  */
