@@ -14,7 +14,7 @@ use whereof\cloudPrint\Printcenter\Printer;
  * @author zhiqiang
  * @package whereof\cloudPrint\Test
  */
-class FeieyunTest extends BaseTest
+class PrintcenterTest extends BaseTest
 {
 
 

@@ -14,7 +14,7 @@ use whereof\cloudPrint\Ushengyun\Printer;
  * @author zhiqiang
  * @package whereof\cloudPrint\Test
  */
-class FeieyunTest extends BaseTest
+class UshengyunTest extends BaseTest
 {
 
 

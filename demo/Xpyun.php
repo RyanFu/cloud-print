@@ -62,7 +62,7 @@ $private_params = [
     'name'   => '',
     'cardno' => '',
 ];
-$printer->delete($private_params);
+$printer->update($private_params);
 
 //清空待打印队列
 $private_params = [
