@@ -149,19 +149,20 @@ class PoscomTest extends BaseTest
         ];
         $this->methodPrivateParams('listTemplate', $private_params);
     }
-    public function testsetTempletPrint()
-    {
-        $private_params = [
-            'deviceID'  => '',
-            'templetID' => '',
-            'tData'     => '',
-            'charset'   => '',
-            'msgNo'     => '',
-            'reprint'   => '',
-            'multi'     => '',
-        ];
-        $this->methodPrivateParams('setTempletPrint', $private_params);
-    }
+
+//    public function testsetTempletPrint()
+//    {
+//        $private_params = [
+//            'deviceID'  => '',
+//            'templetID' => '',
+//            'tData'     => '',
+//            'charset'   => '',
+//            'msgNo'     => '',
+//            'reprint'   => '',
+//            'multi'     => '',
+//        ];
+//        $this->methodPrivateParams('setTempletPrint', $private_params);
+//    }
 
 
     public function methodPrivateParams($method, $private_params)

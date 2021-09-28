@@ -79,7 +79,7 @@ class UshengyunTest extends BaseTest
         $private_params = [
             'deviceid'     => '10000778',
             'devicesecret' => '54t6ehtc',
-            'logodata'     => base64_encode(file_get_contents('./logo.png')),
+            'logodata'     => base64_encode('.png'),
         ];
         $this->methodPrivateParams('cancelOne', $private_params);
     }
