@@ -28,14 +28,14 @@ class PoscomTest extends BaseTest
     }
 
 
-    public function testupdateGroup()
-    {
-        $private_params = [
-            'grpID'   => '',
-            'grpName' => '',
-        ];
-        $this->methodPrivateParams('updateGroup', $private_params);
-    }
+//    public function testupdateGroup()
+//    {
+//        $private_params = [
+//            'grpID'   => '',
+//            'grpName' => '',
+//        ];
+//        $this->methodPrivateParams('updateGroup', $private_params);
+//    }
 
 //    public function testdelGroup()
 //    {
