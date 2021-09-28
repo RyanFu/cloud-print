@@ -46,7 +46,7 @@ class FeieyunTest extends BaseTest
 
     public function methodPrivateParams($method, $private_params)
     {
-        $app    = $this->Feieyun();
+        $app    = $this->Printcenter();
         $client = $this->mockApiClient(Printer::class, $app);
         $data   = json_decode($client->$method($private_params), true);
         $this->assertIsArray($data);

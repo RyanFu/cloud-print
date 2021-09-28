@@ -32,8 +32,8 @@ $printer->print([
 
 //查询打印状态
 $printer->orderState([
-    'deviceid'     => $deviceid,
-    'devicesecret' => $devicesecret,
+    'deviceid'     => '10000778',
+    'devicesecret' => '54t6ehtc',
     'dataid'       => '',
 ]);
 
