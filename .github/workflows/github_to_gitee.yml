@@ -7,7 +7,7 @@ jobs:
     - name: Checkout source codes
       uses: actions/checkout@v1
     - name: Mirror Github to Gitee
-      uses: ./.
+      uses: Yikun/hub-mirror-action@master
       with:
         # 必选，需要同步的Github用户（源）
         src: github/whereof
