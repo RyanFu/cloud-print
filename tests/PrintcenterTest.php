@@ -26,7 +26,7 @@ class PrintcenterTest extends BaseTest
         $this->methodPrivateParams('status', $private_params);
     }
 
-    public function testprint()
+    public function testPrint()
     {
         $private_params = [
             'deviceNo'     => '',
@@ -35,7 +35,7 @@ class PrintcenterTest extends BaseTest
         $this->methodPrivateParams('print', $private_params);
     }
 
-    public function testorderState()
+    public function testOrderState()
     {
         $private_params = [
             'deviceNo'   => '',

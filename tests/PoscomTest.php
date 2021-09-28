@@ -12,14 +12,14 @@ use whereof\cloudPrint\Poscom\Printer;
 class PoscomTest extends BaseTest
 {
 
-    public function testgroup()
+    public function testGroup()
     {
         $private_params = [
         ];
         $this->methodPrivateParams('group', $private_params);
     }
 
-    public function testaddGroup()
+    public function testAddGroup()
     {
         $private_params = [
             'grpName' => '',
@@ -47,7 +47,7 @@ class PoscomTest extends BaseTest
 //    }
 
 
-    public function testregister()
+    public function testRegister()
     {
         $private_params = [
             'deviceID' => '',
@@ -60,7 +60,7 @@ class PoscomTest extends BaseTest
         $this->methodPrivateParams('register', $private_params);
     }
 
-    public function testupdate()
+    public function testUpdate()
     {
         $private_params = [
             'deviceID' => '',
@@ -73,7 +73,7 @@ class PoscomTest extends BaseTest
         $this->methodPrivateParams('update', $private_params);
     }
 
-    public function testdelete()
+    public function testDelete()
     {
         $private_params = [
             'deviceID' => '',
@@ -81,7 +81,7 @@ class PoscomTest extends BaseTest
         $this->methodPrivateParams('delete', $private_params);
     }
 
-    public function teststatus()
+    public function testStatus()
     {
         $private_params = [
             'deviceID' => '',
@@ -98,7 +98,7 @@ class PoscomTest extends BaseTest
 //        $this->methodPrivateParams('clean', $private_params);
 //    }
 
-    public function testprint()
+    public function testPrint()
     {
         $private_params = [
             'charset'   => '',
@@ -114,7 +114,7 @@ class PoscomTest extends BaseTest
         $this->methodPrivateParams('print', $private_params);
     }
 
-    public function testorderState()
+    public function testOrderState()
     {
         $private_params = [
             'msgNo' => '',
@@ -124,7 +124,7 @@ class PoscomTest extends BaseTest
 
 
 
-    public function testsetVoice()
+    public function testSetVoice()
     {
         $private_params = [
             'deviceID' => '',
@@ -133,7 +133,7 @@ class PoscomTest extends BaseTest
         $this->methodPrivateParams('setVoice', $private_params);
     }
 
-    public function testsetVoiceType()
+    public function testSetVoiceType()
     {
         $private_params = [
             'deviceID'  => '',
@@ -142,7 +142,7 @@ class PoscomTest extends BaseTest
         $this->methodPrivateParams('setVoiceType', $private_params);
     }
 
-    public function testlistTemplate()
+    public function testListTemplate()
     {
         $private_params = [
 

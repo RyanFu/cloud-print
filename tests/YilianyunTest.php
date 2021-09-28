@@ -13,7 +13,7 @@ class YilianyunTest extends BaseTest
 {
 
 
-    public function testregister()
+    public function testRegister()
     {
         $private_params = [
             'machine_code' => '',//易联云打印机终端号
@@ -24,7 +24,7 @@ class YilianyunTest extends BaseTest
         $this->methodPrivateParams('register', $private_params);
     }
 
-    public function testdelete()
+    public function testDelete()
     {
         $private_params = [
             'machine_code' => '',//易联云打印机终端号
@@ -32,7 +32,7 @@ class YilianyunTest extends BaseTest
         $this->methodPrivateParams('delete', $private_params);
     }
 
-    public function teststatus()
+    public function testStatus()
     {
         $private_params = [
             'machine_code' => '',//易联云打印机终端号
@@ -40,7 +40,7 @@ class YilianyunTest extends BaseTest
         $this->methodPrivateParams('status', $private_params);
     }
 
-    public function testrestart()
+    public function testRestart()
     {
         $private_params = [
             'machine_code'  => '',//易联云打印机终端号
@@ -50,7 +50,7 @@ class YilianyunTest extends BaseTest
     }
 
 
-    public function testsetSound()
+    public function testSetSound()
     {
         $private_params = [
             'machine_code'  => '',//易联云打印机终端号,
@@ -60,7 +60,7 @@ class YilianyunTest extends BaseTest
         $this->methodPrivateParams('setSound', $private_params);
     }
 
-    public function testorderState()
+    public function testOrderState()
     {
         $private_params = [
             'machine_code' => '',//易联云打印机终端号
@@ -70,7 +70,7 @@ class YilianyunTest extends BaseTest
         $this->methodPrivateParams('orderState', $private_params);
     }
 
-    public function testclean()
+    public function testClean()
     {
         $private_params = [
             'machine_code' => '',//易联云打印机终端号
@@ -79,7 +79,7 @@ class YilianyunTest extends BaseTest
         $this->methodPrivateParams('clean', $private_params);
     }
 
-    public function testcleanAll()
+    public function testCleanAll()
     {
         $private_params = [
             'machine_code' => '',//易联云打印机终端号
@@ -87,7 +87,7 @@ class YilianyunTest extends BaseTest
         $this->methodPrivateParams('cleanAll', $private_params);
     }
 
-    public function testsetVoice()
+    public function testSetVoice()
     {
         $private_params = [
             'machine_code' => '',//易联云打印机终端号
@@ -98,7 +98,7 @@ class YilianyunTest extends BaseTest
         $this->methodPrivateParams('setVoice', $private_params);
     }
 
-    public function testdeleteVoice()
+    public function testDeleteVoice()
     {
         $private_params = [
             'machine_code' => '',//易联云打印机终端号
@@ -107,7 +107,7 @@ class YilianyunTest extends BaseTest
         $this->methodPrivateParams('deleteVoice', $private_params);
     }
 
-    public function testtextPrint()
+    public function testTextPrint()
     {
         $private_params = [
             'machine_code' => '',//易联云打印机终端号
@@ -117,7 +117,7 @@ class YilianyunTest extends BaseTest
         $this->methodPrivateParams('textPrint', $private_params);
     }
 
-    public function testpicPrint()
+    public function testPicPrint()
     {
         $private_params = [
             'machine_code' => '',//易联云打印机终端号
@@ -127,7 +127,7 @@ class YilianyunTest extends BaseTest
         $this->methodPrivateParams('picPrint', $private_params);
     }
 
-    public function testexpressPrint()
+    public function testExpressPrint()
     {
         $private_params = [
             'machine_code' => '',//易联云打印机终端号

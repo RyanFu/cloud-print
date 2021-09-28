@@ -27,7 +27,7 @@ class JolimarkTest extends BaseTest
         $this->methodPrivateParams('register', $private_params);
     }
 
-    public function testdelete()
+    public function testDelete()
     {
         $private_params = [
             'device_codes' => '',
@@ -35,7 +35,7 @@ class JolimarkTest extends BaseTest
         $this->methodPrivateParams('delete', $private_params);
     }
 
-    public function testorderNotPrint()
+    public function testOrderNotPrint()
     {
         $private_params = [
             'device_codes' => '',
@@ -43,14 +43,14 @@ class JolimarkTest extends BaseTest
         $this->methodPrivateParams('orderNotPrint', $private_params);
     }
 
-    public function testclean()
+    public function testClean()
     {
         $private_params = [
             'device_codes' => '',
         ];
         $this->methodPrivateParams('clean', $private_params);
     }
-    public function testhtml2Print()
+    public function testHtml2Print()
     {
         $private_params =[
             'device_ids'   => '',
@@ -65,7 +65,7 @@ class JolimarkTest extends BaseTest
         ];
         $this->methodPrivateParams('html2Print', $private_params);
     }
-    public function testhtmlPrint()
+    public function testHtmlPrint()
     {
         $private_params =[
             'device_ids'   => '',
@@ -80,7 +80,7 @@ class JolimarkTest extends BaseTest
         ];
         $this->methodPrivateParams('htmlPrint', $private_params);
     }
-    public function testurlPrint()
+    public function testUrlPrint()
     {
         $private_params =[
             'device_ids'   => '',
@@ -95,7 +95,7 @@ class JolimarkTest extends BaseTest
         $this->methodPrivateParams('urlPrint', $private_params);
     }
 
-    public function testpicPrint()
+    public function testPicPrint()
     {
         $private_params =[
             'device_ids'   => '',
@@ -109,7 +109,7 @@ class JolimarkTest extends BaseTest
         ];
         $this->methodPrivateParams('picPrint', $private_params);
     }
-    public function testgrayPrint()
+    public function testGrayPrint()
     {
         $private_params =[
             'device_ids'   => '',
@@ -124,7 +124,7 @@ class JolimarkTest extends BaseTest
         $this->methodPrivateParams('grayPrint', $private_params);
     }
 
-    public function testprintEsc()
+    public function testPrintEsc()
     {
         $private_params =[
             'device_ids'   => '',
@@ -139,7 +139,7 @@ class JolimarkTest extends BaseTest
         $this->methodPrivateParams('printEsc', $private_params);
     }
 
-    public function testpointTextPrint()
+    public function testPointTextPrint()
     {
         $private_params =[
             'device_ids'   => '',
@@ -154,7 +154,7 @@ class JolimarkTest extends BaseTest
         $this->methodPrivateParams('pointTextPrint', $private_params);
     }
 
-    public function testlabelPrint()
+    public function testLabelPrint()
     {
         $private_params =[
             'device_ids'   => '',
@@ -169,7 +169,7 @@ class JolimarkTest extends BaseTest
         $this->methodPrivateParams('labelPrint', $private_params);
     }
 
-    public function testexpressPrint()
+    public function testExpressPrint()
     {
         $private_params =[
             'device_ids'  => '',
@@ -191,7 +191,7 @@ class JolimarkTest extends BaseTest
         $this->methodPrivateParams('expressPrint', $private_params);
     }
 
-    public function testprintTemp()
+    public function testPrintTemp()
     {
         $private_params =[
             'device_ids'   => '',
@@ -205,7 +205,7 @@ class JolimarkTest extends BaseTest
         $this->methodPrivateParams('printTemp', $private_params);
     }
 
-    public function testfilePrint()
+    public function testFilePrint()
     {
         $private_params =[
             'device_ids'   => '',
@@ -220,7 +220,7 @@ class JolimarkTest extends BaseTest
         $this->methodPrivateParams('filePrint', $private_params);
     }
 
-    public function testfileByUrlPrint()
+    public function testFileByUrlPrint()
     {
         $private_params =[
             'device_ids'   => '',
@@ -235,7 +235,7 @@ class JolimarkTest extends BaseTest
         ];
         $this->methodPrivateParams('fileByUrlPrint', $private_params);
     }
-    public function testinvoicePrint()
+    public function testInvoicePrint()
     {
         $private_params =[
             'device_ids'   => '',

@@ -50,7 +50,7 @@ class FeieyunTest extends BaseTest
         $this->methodPrivateParams('status', $private_params);
     }
 
-    public function testlabelMsg()
+    public function testLabelMsg()
     {
         $private_params = [
             'sn'      => '',
@@ -71,7 +71,7 @@ class FeieyunTest extends BaseTest
         $this->methodPrivateParams('msg', $private_params);
     }
 
-    public function testclean()
+    public function testClean()
     {
         $private_params = [
             'sn' => '',
@@ -79,7 +79,7 @@ class FeieyunTest extends BaseTest
         $this->methodPrivateParams('clean', $private_params);
     }
 
-    public function testorderState()
+    public function testOrderState()
     {
         $private_params = [
             'orderid' => '',
@@ -87,7 +87,7 @@ class FeieyunTest extends BaseTest
         $this->methodPrivateParams('orderState', $private_params);
     }
 
-    public function testorderInfoByDate()
+    public function testOrderInfoByDate()
     {
         $private_params = [
             'sn'   => '',

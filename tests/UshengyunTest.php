@@ -27,7 +27,7 @@ class UshengyunTest extends BaseTest
         $this->methodPrivateParams('status', $private_params);
     }
 
-    public function testprint()
+    public function testPrint()
     {
         $printdata = '优声云拥有自主研发的云打印机，提供稳定高效，高可用的云打印方案';
 
@@ -45,7 +45,7 @@ class UshengyunTest extends BaseTest
         $this->methodPrivateParams('print', $private_params);
     }
 
-    public function testclean()
+    public function testClean()
     {
         $private_params = [
             'deviceid'     => '10000778',
@@ -54,7 +54,7 @@ class UshengyunTest extends BaseTest
         $this->methodPrivateParams('clean', $private_params);
     }
 
-    public function testcancelOne()
+    public function testCancelOne()
     {
         $private_params = [
             'deviceid'     => '10000778',
@@ -64,7 +64,7 @@ class UshengyunTest extends BaseTest
         $this->methodPrivateParams('cancelOne', $private_params);
     }
 
-    public function testsetSound()
+    public function testSetSound()
     {
         $private_params = [
             'deviceid'     => '10000778',
@@ -74,7 +74,7 @@ class UshengyunTest extends BaseTest
         $this->methodPrivateParams('cancelOne', $private_params);
     }
 
-    public function testsetLogo()
+    public function testSetLogo()
     {
         $private_params = [
             'deviceid'     => '10000778',
@@ -85,7 +85,7 @@ class UshengyunTest extends BaseTest
     }
 
 
-    public function testorderState()
+    public function testOrderState()
     {
         $private_params = [
             'deviceid'     => '10000778',

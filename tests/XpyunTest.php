@@ -17,14 +17,14 @@ use whereof\cloudPrint\Xpyun\Printer;
 class XpyunTest extends BaseTest
 {
 
-    public function testregister()
+    public function testRegister()
     {
         $private_params = ['items' => [['name' => '', 'sn' => '']]];
         $this->methodPrivateParams('register', $private_params);
     }
 
 
-    public function testmsg()
+    public function testMsg()
     {
         $private_params = [
             'sn'        => '',
@@ -41,7 +41,7 @@ class XpyunTest extends BaseTest
     }
 
 
-    public function testlabelMsg()
+    public function testLabelMsg()
     {
         $private_params = [
             'sn'        => '',
@@ -58,7 +58,7 @@ class XpyunTest extends BaseTest
     }
 
 
-    public function testdelete()
+    public function testDelete()
     {
         $private_params = [
             'snlist' => '',
@@ -67,7 +67,7 @@ class XpyunTest extends BaseTest
     }
 
 
-    public function testupdate()
+    public function testUpdate()
     {
         $private_params = [
             'sn'     => '',
@@ -77,7 +77,7 @@ class XpyunTest extends BaseTest
         $this->methodPrivateParams('update', $private_params);
     }
 
-    public function testclean()
+    public function testClean()
     {
         $private_params = [
             'sn' => '',
@@ -85,7 +85,7 @@ class XpyunTest extends BaseTest
         $this->methodPrivateParams('clean', $private_params);
     }
 
-    public function testorderState()
+    public function testOrderState()
     {
         $private_params = [
             'orderid' => '',
@@ -93,7 +93,7 @@ class XpyunTest extends BaseTest
         $this->methodPrivateParams('orderState', $private_params);
     }
 
-    public function testorderInfoByDate()
+    public function testOrderInfoByDate()
     {
         $private_params = [
             'sn'   => '',
@@ -103,7 +103,7 @@ class XpyunTest extends BaseTest
     }
 
 
-    public function teststatus()
+    public function testStatus()
     {
         $private_params = [
             'sn' => '',
@@ -111,7 +111,7 @@ class XpyunTest extends BaseTest
         $this->methodPrivateParams('status', $private_params);
     }
 
-    public function testallStatus()
+    public function testAllStatus()
     {
         $private_params = [
             'snlist' => '',
@@ -119,7 +119,7 @@ class XpyunTest extends BaseTest
         $this->methodPrivateParams('allStatus', $private_params);
     }
 
-    public function testsetVoice()
+    public function testSetVoice()
     {
         $private_params = [
             'sn'        => '',
@@ -128,7 +128,7 @@ class XpyunTest extends BaseTest
         $this->methodPrivateParams('setVoice', $private_params);
     }
 
-    public function testplayVoice()
+    public function testPlayVoice()
     {
         $private_params = [
             'sn'      => '',

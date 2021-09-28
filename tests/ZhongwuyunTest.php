@@ -12,7 +12,7 @@ use whereof\cloudPrint\Zhongwuyun\Printer;
 class ZhongwuyunTest extends BaseTest
 {
 
-    public function teststatus()
+    public function testStatus()
     {
         $private_params = [
             'deviceid'     => '1111111',
@@ -21,7 +21,7 @@ class ZhongwuyunTest extends BaseTest
         $this->methodPrivateParams('status', $private_params);
     }
 
-    public function testorderState()
+    public function testOrderState()
     {
         $private_params = [
             'deviceid'     => '1111111',
@@ -31,7 +31,7 @@ class ZhongwuyunTest extends BaseTest
         $this->methodPrivateParams('orderState', $private_params);
     }
 
-    public function testclean()
+    public function testClean()
     {
         $private_params = [
             'deviceid'     => '1111111',
@@ -40,7 +40,7 @@ class ZhongwuyunTest extends BaseTest
         $this->methodPrivateParams('clean', $private_params);
     }
 
-    public function testcleanOne()
+    public function testCleanOne()
     {
         $private_params = [
             'dataid' => '123',
@@ -48,7 +48,7 @@ class ZhongwuyunTest extends BaseTest
         $this->methodPrivateParams('cleanOne', $private_params);
     }
 
-    public function testsetSound()
+    public function testSetSound()
     {
         $private_params = [
             'deviceid'     => '1111111',
@@ -58,7 +58,7 @@ class ZhongwuyunTest extends BaseTest
         $this->methodPrivateParams('setSound', $private_params);
     }
 
-    public function testsetVoice()
+    public function testSetVoice()
     {
         $private_params = [
             'deviceid'     => '1111111',
@@ -68,7 +68,7 @@ class ZhongwuyunTest extends BaseTest
         $this->methodPrivateParams('setVoice', $private_params);
     }
 
-    public function testprint()
+    public function testPrint()
     {
         $private_params = [
             'deviceid'     => '1111111',
