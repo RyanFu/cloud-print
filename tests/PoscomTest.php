@@ -37,14 +37,14 @@ class PoscomTest extends BaseTest
         $this->methodPrivateParams('updateGroup', $private_params);
     }
 
-    public function testdelGroup()
-    {
-        $private_params = [
-            'grpID'   => '',
-            'grpName' => '',
-        ];
-        $this->methodPrivateParams('delGroup', $private_params);
-    }
+//    public function testdelGroup()
+//    {
+//        $private_params = [
+//            'grpID'   => '',
+//            'grpName' => '',
+//        ];
+//        $this->methodPrivateParams('delGroup', $private_params);
+//    }
 
 
     public function testregister()
