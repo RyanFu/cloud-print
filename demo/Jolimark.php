@@ -116,7 +116,7 @@ $printer->labelPrint([
     'time_out'     => '',
 ]);
 //打印快递面单
-$printer->labelPrint([
+$printer->expressPrint([
     'device_ids'  => '',
     'copies'      => '',
     'cus_orderid' => '',
@@ -156,13 +156,14 @@ $printer->filePrint([
     'time_out'     => '',
 ]);
 //打印远程文档
-$printer->filePrint([
+$printer->fileByUrlPrint([
     'device_ids'   => '',
     'copies'       => '',
     'cus_orderid'  => '',
-    'bill_content' => '',
-    'paper_width'  => '',
-    'paper_height' => '',
+    'file_type' => '',
+    'bill_content'  => '',
+    'paper_width' => '',
+    'paper_height'   => '',
     'paper_type'   => '',
     'time_out'     => '',
 ]);

@@ -260,6 +260,7 @@ class Printer extends JolimarkClient implements PrinterInterface
     }
 
     /**
+     * 打印远程文档
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
