@@ -13,6 +13,7 @@
 
 
 <p align="center">
+    <a href="https://github.com/whereof/cloud-print/actions"><img src="https://github.com/whereof/cloud-print/workflows/Tester/badge.svg" alt="Linter Status"></a>
 <a href="https://packagist.org/packages/whereof/cloud-print" rel="nofollow"><img src="http://poser.pugx.org/whereof/cloud-print/v" alt="Latest Stable Version" data-canonical-src="http://poser.pugx.org/whereof/cloud-print/v" style="max-width: 100%;"></a> <a href="https://packagist.org/packages/whereof/cloud-print" rel="nofollow"><img src="http://poser.pugx.org/whereof/cloud-print/downloads" alt="Total Downloads" data-canonical-src="http://poser.pugx.org/whereof/cloud-print/downloads" style="max-width: 100%;"></a> <a href="https://packagist.org/packages/whereof/cloud-print" rel="nofollow"><img src="http://poser.pugx.org/whereof/cloud-print/v/unstable" alt="Latest Unstable Version" data-canonical-src="http://poser.pugx.org/whereof/cloud-print/v/unstable" style="max-width: 100%;"></a> <a href="https://packagist.org/packages/whereof/cloud-print" rel="nofollow"><img src="http://poser.pugx.org/whereof/cloud-print/license" alt="License" data-canonical-src="http://poser.pugx.org/whereof/cloud-print/license" style="max-width: 100%;"></a> <a href="https://packagist.org/packages/whereof/cloud-print" rel="nofollow"><img src="http://poser.pugx.org/whereof/cloud-print/require/php" alt="PHP Version Require" data-canonical-src="http://poser.pugx.org/whereof/cloud-print/require/php" style="max-width: 100%;"></a>
 </p>
 
