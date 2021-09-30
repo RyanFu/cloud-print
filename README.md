@@ -4,7 +4,7 @@
 
 <p align="center">
 <p align="center">
-	<strong>开源地址：</strong> <a target="_blank" href='https://gitee.com/whereof/cloud-print'>Gitee</a> | <a target="_blank" href=‘https://github.com/whereof/cloud-print'>Github</a> 
+	<strong>开源地址：</strong> <a target="_blank" href='https://gitee.com/whereof/cloud-print'>Gitee</a> | <a target="_blank" href='https://github.com/whereof/cloud-print'>Github</a> 
 </p>
 <p align="center">
 	<strong>开发者文档：</strong> <a target="_blank" href='https://github.com/whereof/cloud-print/wiki'>wiki</a>
