@@ -4,7 +4,7 @@
 namespace whereof\cloudPrint\Kernel;
 
 use whereof\Cache\CacheManager;
-use whereof\Cache\Driver;
+use whereof\Cache\Support\DriverAbstract;
 use whereof\cloudPrint\Kernel\Interfaces\CacheInterface;
 
 /**
@@ -58,11 +58,11 @@ class FileCache implements CacheInterface
 
 
     /**
-     * @return Driver
+     * @return DriverAbstract
      */
     private function getSystemAdapter()
     {
-       return (new CacheManager())->driver('file', [
+        return CacheManager::File([
             'prefix' => 'cloud_print',
             'path'   => './.cache',
         ]);
