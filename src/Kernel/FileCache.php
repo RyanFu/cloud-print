@@ -4,7 +4,7 @@
 namespace whereof\cloudPrint\Kernel;
 
 use whereof\Cache\CacheManager;
-use whereof\Cache\Support\DriverAbstract;
+use whereof\Cache\DriverAbstract;
 use whereof\cloudPrint\Kernel\Interfaces\CacheInterface;
 
 /**
