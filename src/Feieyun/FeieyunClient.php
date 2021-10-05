@@ -6,8 +6,6 @@ namespace whereof\cloudPrint\Feieyun;
 
 use whereof\cloudPrint\Kernel\BaseClient;
 use whereof\cloudPrint\Kernel\Support\Timer;
-use whereof\Helper\ArrayHelper;
-use whereof\Logger\Logger;
 
 /**
  * Class FeieyunClient
