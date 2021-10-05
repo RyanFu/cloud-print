@@ -28,7 +28,25 @@
 composer require whereof/cloud-print
 ~~~~
 
-基于[365智能云打印](http://printcenter.cn/)的 PHP 接口组件
+## 请求日志记录
+
+~~~
+'http_log' => [
+	'enable' => true,
+]
+
+$printer = \whereof\cloudPrint\Factory::Feieyun([
+    'user' => '',
+    'ukey' => '',
+    'http_log' => [
+      'enable' => true,
+    ]
+])->printer;
+~~~
+
+## 案例
+
+### 基于[365智能云打印](http://printcenter.cn/)的 PHP 接口组件
 
 ~~~
 $printer = \whereof\cloudPrint\Factory::Printcenter([
@@ -36,7 +54,7 @@ $printer = \whereof\cloudPrint\Factory::Printcenter([
 ])->printer;
 ~~~
 
-基于[中午云](http://www.zhongwu.co/)的 PHP 接口组件
+### 基于[中午云](http://www.zhongwu.co/)的 PHP 接口组件
 
 ~~~
 $printer = \whereof\cloudPrint\Factory::Zhongwuyun([
@@ -45,7 +63,7 @@ $printer = \whereof\cloudPrint\Factory::Zhongwuyun([
 ])->printer;
 ~~~
 
-基于 [优声云](https://www.ushengyun.com/) 的 PHP 接口组件
+### 基于 [优声云](https://www.ushengyun.com/) 的 PHP 接口组件
 
 ~~~
 $printer = \whereof\cloudPrint\Factory::Ushengyun([
@@ -54,7 +72,7 @@ $printer = \whereof\cloudPrint\Factory::Ushengyun([
 ])->printer;
 ~~~
 
-基于[佳博云](https://dev.poscom.cn/)的 PHP 接口组件
+### 基于[佳博云](https://dev.poscom.cn/)的 PHP 接口组件
 
 ~~~
 $printer = \whereof\cloudPrint\Factory::Poscom([
@@ -63,7 +81,7 @@ $printer = \whereof\cloudPrint\Factory::Poscom([
 ])->printer;
 ~~~
 
-基于[快递100](https://api.kuaidi100.com/document/5f0ff6adbc8da837cbd8aef8)的 PHP 接口组件
+### 基于[快递100](https://api.kuaidi100.com/document/5f0ff6adbc8da837cbd8aef8)的 PHP 接口组件
 
 ~~~
 $printer = \whereof\cloudPrint\Factory::Kuaidi100([
@@ -72,7 +90,7 @@ $printer = \whereof\cloudPrint\Factory::Kuaidi100([
 ])->printer;
 ~~~
 
-基于[易联云](https://www.yilianyun.net/)的 PHP 接口组件
+### 基于[易联云](https://www.yilianyun.net/)的 PHP 接口组件
 
 ~~~
 $printer = \whereof\cloudPrint\Factory::Yilianyun([
@@ -81,7 +99,7 @@ $printer = \whereof\cloudPrint\Factory::Yilianyun([
 ])->printer;
 ~~~
 
-基于[映美云](http://open.jolimark.com/)的 PHP 接口组件
+### 基于[映美云](http://open.jolimark.com/)的 PHP 接口组件
 
 ~~~
 $printer = \whereof\cloudPrint\Factory::Jolimark([
@@ -90,7 +108,7 @@ $printer = \whereof\cloudPrint\Factory::Jolimark([
 ])->printer;
 ~~~
 
-基于 [芯烨云](https://www.xpyun.net/open/index.html) 的 PHP 接口组件
+### 基于 [芯烨云](https://www.xpyun.net/open/index.html) 的 PHP 接口组件
 
 ~~~
 $printer = \whereof\cloudPrint\Factory::Xpyun([
