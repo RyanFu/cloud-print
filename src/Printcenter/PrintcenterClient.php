@@ -22,6 +22,7 @@ class PrintcenterClient extends BaseClient
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Exception
      */
     public function request($action, $private_params)
     {
@@ -30,7 +31,9 @@ class PrintcenterClient extends BaseClient
             'key' => $this->config['key'],
         ];
         $params        = array_filter(array_merge($public_params, $private_params));
-        return $this->httpPost($url, $params);
+        $resp          = $this->httpPost($url, $params);
+        $this->debug('POST:' . $url, $params, $resp);
+        return $resp;
     }
 
 }

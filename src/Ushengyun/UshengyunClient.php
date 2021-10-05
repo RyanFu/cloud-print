@@ -25,6 +25,7 @@ class UshengyunClient extends BaseClient
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Exception
      */
     public function request($action, $private_params)
     {
@@ -36,9 +37,12 @@ class UshengyunClient extends BaseClient
         $params           = array_filter(array_merge($public_params, $private_params));
         $protocol['sign'] = $this->sign($params);
         $url              = $this->config['host'] ?? $this->host . "/" . $action;
-        return $this->httpPostJson($url, [
+
+        $resp = $this->httpPostJson($url, [
             'form_params' => $params
         ]);
+        $this->debug('POST:' . $url, $params, $resp);
+        return $resp;
     }
 
     /**

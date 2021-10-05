@@ -11,7 +11,7 @@ use whereof\cloudPrint\Kernel\Support\Timer;
  * Class XpyunClient
  * @package whereof\cloudPrint\Xpyun
  */
-class XpyunClient  extends BaseClient
+class XpyunClient extends BaseClient
 {
 
     /**
@@ -24,6 +24,7 @@ class XpyunClient  extends BaseClient
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Exception
      */
     public function request($action, $private_params)
     {
@@ -35,7 +36,9 @@ class XpyunClient  extends BaseClient
         ];
         $params        = array_filter(array_merge($public_params, $private_params));
         $url           = $this->config['host'] ?? $this->host . '/' . $action;
-        return $this->httpPostJson($url, $params);
+        $resp          = $this->httpPostJson($url, $params);
+        $this->debug('POST:' . $url, $params, $resp);
+        return $resp;
     }
 
     /**

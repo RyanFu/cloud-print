@@ -34,14 +34,16 @@ class YilianyunClient extends BaseClient
             'client_id' => $this->config['client_id'],
             'sign'      => $this->sign($timestamp),
             'timestamp' => $timestamp,
-            'id'        => Uuid::uuid4()
+            'id'        => Uuid::uuid4()->toString()
         ];
         if ($action != 'oauth/oauth') {
             $public_params['access_token'] = $this->accessToken();
         }
         $url    = $this->buildHost($action);
         $params = array_filter(array_merge($public_params, $private_params));
-        return $this->httpPost($url, $params);
+        $resp   = $this->httpPost($url, $params);
+        $this->debug('POST:' . $url, $params, $resp);
+        return $resp;
     }
 
     /**

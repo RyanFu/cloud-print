@@ -19,6 +19,7 @@ class Kuaidi100Client extends BaseClient
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Exception
      */
     public function request($url, $action, $private_params)
     {
@@ -31,9 +32,14 @@ class Kuaidi100Client extends BaseClient
             'param'  => json_encode($private_params),
         ];
         if ($action == 'imgOrder') {
-            return $this->httpGet($url, $params, ['Content-Type' => 'multipart/form-data']);
+            $methed = 'GET';
+            $resp   = $this->httpGet($url, $params, ['Content-Type' => 'multipart/form-data']);
+        } else {
+            $methed = 'POST';
+            $resp   = $this->httpPost($url, $params);
         }
-        return $this->httpPost($url, $params);
+        $this->debug($methed . ':' . $url, $params, $resp);
+        return $resp;
     }
 
     /**

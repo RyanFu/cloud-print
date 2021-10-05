@@ -56,7 +56,6 @@ class FileCache implements CacheInterface
         return $this->getSystemAdapter()->delete($key);
     }
 
-
     /**
      * @return DriverAbstract
      */
@@ -64,7 +63,7 @@ class FileCache implements CacheInterface
     {
         return CacheManager::File([
             'prefix' => 'cloud_print',
-            'path'   => './.cache',
+            'path'   => './.runtime/cache',
         ]);
     }
 }

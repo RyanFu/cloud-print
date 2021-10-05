@@ -8,6 +8,7 @@ use whereof\cloudPrint\Kernel\Interfaces\CacheInterface;
 use whereof\Helper\ArrayHelper;
 use whereof\Helper\StrHelper;
 use whereof\HttpClient;
+use whereof\Logger\Logger;
 
 
 /**
@@ -48,5 +49,31 @@ class BaseClient
             return $cache;
         }
         return new FileCache();
+    }
+
+    /**
+     * @param $message
+     * @param $request
+     * @param $response
+     * @throws \Exception
+     */
+    public function debug($message, $request, $response)
+    {
+        if ($this->config('http_log.enable', false)) {
+            Logger::File([
+                'logfile' => './.runtime/cloud-print.log',
+            ])->debug($message, ['request' => $request, 'response' => $response]);
+        }
+    }
+
+    /**
+     * @param $key
+     * @param null $default
+     * @return mixed
+     * @throws \Exception
+     */
+    public function config($key, $default = null)
+    {
+        return ArrayHelper::getValue($this->config, $key, $default);
     }
 }

@@ -28,6 +28,7 @@ class JolimarkClient extends BaseClient
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Exception
      */
     public function request($method, $action, $private_params)
     {
@@ -39,9 +40,14 @@ class JolimarkClient extends BaseClient
             $private_params['access_token'] = $this->accessToken();
         }
         $params = array_filter(array_merge($public_params, $private_params));
-        return $this->httpRequest($method, $url, [
+
+        $resp = $this->httpRequest($method, $url, [
             'form_params' => $params
         ]);
+
+        $this->debug($method . ':' . $url, $params, $resp);
+
+        return $resp;
     }
 
     /**

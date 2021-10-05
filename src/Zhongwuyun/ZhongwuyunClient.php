@@ -25,6 +25,7 @@ class ZhongwuyunClient extends BaseClient
      * @param bool $is_get
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Exception
      */
     public function request($action, $private_params, $is_get = false)
     {
@@ -35,10 +36,15 @@ class ZhongwuyunClient extends BaseClient
         $params         = array_filter(array_merge($public_params, $private_params));
         $params['sign'] = $this->sign($params);
         $url            = $this->config['host'] ?? $this->host . "/" . $action;
-        if ($is_get){
-            return $this->httpGet($url, $params);
+        if ($is_get) {
+            $methed = 'GET';
+            $resp   = $this->httpGet($url, $params);
+        } else {
+            $methed = 'POST';
+            $resp   = $this->httpPost($url, $params);
         }
-        return $this->httpPost($url, $params);
+        $this->debug($methed . ':' . $url, $params, $resp);
+        return $resp;
     }
 
     /**

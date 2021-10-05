@@ -44,9 +44,12 @@ class ServiceContainer extends Container
     {
         $base = [
             // http://docs.guzzlephp.org/en/stable/request-options.html
-            'http' => [
+            'http'     => [
                 'timeout' => 30.0,
-            ]
+            ],
+//            'http_log' => [
+//                'enable' => true,
+//            ]
         ];
         return array_replace_recursive($base, $this->defaultConfig, $this->userConfig);
     }
