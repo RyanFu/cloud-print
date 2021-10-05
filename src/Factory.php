@@ -4,6 +4,8 @@
 namespace whereof\cloudPrint;
 
 
+use InvalidArgumentException;
+
 /**
  * Class Factory
  * @package whereof\cloudPrint
@@ -20,6 +22,11 @@ namespace whereof\cloudPrint;
 class Factory
 {
     /**
+     * @var array
+     */
+    protected static $instances = [];
+
+    /**
      * @param $name
      * @param array $config
      * @return mixed
@@ -27,7 +34,14 @@ class Factory
     protected static function make($name, array $config)
     {
         $app = __NAMESPACE__ . '\\' . $name . '\\AppContainer';
-        return new $app($config);
+        if (!class_exists($app)) {
+            throw new InvalidArgumentException('class not exists:' . $app);
+        }
+        $instance = crc32($name . serialize($config));
+        if (!isset(self::$instances[$instance])) {
+            self::$instances[$instance] = new $app($config);
+        }
+        return self::$instances[$instance];
     }
 
     /**
@@ -37,6 +51,7 @@ class Factory
      */
     public static function __callStatic($name, $arguments)
     {
+//        $config = (array_key_exists(0, $arguments) && is_array($arguments) ? $arguments[0] : []);
         return self::make($name, ...$arguments);
     }
 }
