@@ -2,21 +2,28 @@
 /*
  * Desc: 
  * User: zhiqiang
- * Date: 2021-09-29 00:17
+ * Date: 2021-10-06 17:28
  */
 
-namespace whereof\cloudPrint\Test;
+namespace whereof\cloudPrint\Tests\Ushengyun;
 
+use whereof\cloudPrint\Tests\BaseTest;
 use whereof\cloudPrint\Ushengyun\Printer;
 
 /**
- * Class FeieyunTest
+ * Class PrinterTest
  * @author zhiqiang
- * @package whereof\cloudPrint\Test
+ * @package whereof\cloudPrint\Tests\Ushengyun
  */
-class UshengyunTest extends BaseTest
+class PrinterTest extends BaseTest
 {
-
+    public function methodPrivateParams($method, $private_params)
+    {
+        $app    = $this->Ushengyun();
+        $client = $this->mockApiClient(Printer::class, $app);
+        $data   = json_decode($client->$method($private_params), true);
+        $this->assertIsArray($data);
+    }
 
     public function testStatus()
     {
@@ -95,11 +102,5 @@ class UshengyunTest extends BaseTest
         $this->methodPrivateParams('orderState', $private_params);
     }
 
-    public function methodPrivateParams($method, $private_params)
-    {
-        $app    = $this->Ushengyun();
-        $client = $this->mockApiClient(Printer::class, $app);
-        $data   = json_decode($client->$method($private_params), true);
-        $this->assertIsArray($data);
-    }
+
 }

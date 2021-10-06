@@ -2,27 +2,35 @@
 /*
  * Desc: 
  * User: zhiqiang
- * Date: 2021-09-29 00:17
+ * Date: 2021-10-06 17:28
  */
 
-namespace whereof\cloudPrint\Test;
+namespace whereof\cloudPrint\Tests\Xpyun;
 
+use whereof\cloudPrint\Tests\BaseTest;
 use whereof\cloudPrint\Xpyun\Printer;
 
 /**
- * Class FeieyunTest
+ * Class PrinterTest
  * @author zhiqiang
- * @package whereof\cloudPrint\Test
+ * @package whereof\cloudPrint\Tests\Xpyun
  */
-class XpyunTest extends BaseTest
+class PrinterTest extends BaseTest
 {
+
+    public function methodPrivateParams($method, $private_params)
+    {
+        $app    = $this->Xpyun();
+        $client = $this->mockApiClient(Printer::class, $app);
+        $data   = json_decode($client->$method($private_params), true);
+        $this->assertIsArray($data);
+    }
 
     public function testRegister()
     {
         $private_params = ['items' => [['name' => '', 'sn' => '']]];
         $this->methodPrivateParams('register', $private_params);
     }
-
 
     public function testMsg()
     {
@@ -139,11 +147,5 @@ class XpyunTest extends BaseTest
         $this->methodPrivateParams('playVoice', $private_params);
     }
 
-    public function methodPrivateParams($method, $private_params)
-    {
-        $app    = $this->Xpyun();
-        $client = $this->mockApiClient(Printer::class, $app);
-        $data   = json_decode($client->$method($private_params), true);
-        $this->assertIsArray($data);
-    }
+
 }

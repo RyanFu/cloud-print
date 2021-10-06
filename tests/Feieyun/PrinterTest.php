@@ -2,21 +2,21 @@
 /*
  * Desc: 
  * User: zhiqiang
- * Date: 2021-09-29 00:17
+ * Date: 2021-10-06 17:24
  */
 
-namespace whereof\cloudPrint\Test;
+namespace whereof\cloudPrint\Tests\Feieyun;
 
 use whereof\cloudPrint\Feieyun\Printer;
+use whereof\cloudPrint\Tests\BaseTest;
 
 /**
- * Class FeieyunTest
+ * Class PrinterTest
  * @author zhiqiang
- * @package whereof\cloudPrint\Test
+ * @package whereof\cloudPrint\Tests\Feieyun
  */
-class FeieyunTest extends BaseTest
+class PrinterTest extends BaseTest
 {
-
     public function testRegister()
     {
         $private_params = ['printerContent' => '316500010 # abcdefgh # 快餐前台 # 13688889999'];

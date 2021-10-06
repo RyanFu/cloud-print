@@ -2,16 +2,21 @@
 /*
  * Desc: 
  * User: zhiqiang
- * Date: 2021-09-29 01:17
+ * Date: 2021-10-06 17:26
  */
 
-namespace whereof\cloudPrint\Test;
+namespace whereof\cloudPrint\Tests\Poscom;
 
 use whereof\cloudPrint\Poscom\Printer;
+use whereof\cloudPrint\Tests\BaseTest;
 
-class PoscomTest extends BaseTest
+/**
+ * Class PrinterTest
+ * @author zhiqiang
+ * @package whereof\cloudPrint\Tests\Poscom
+ */
+class PrinterTest extends BaseTest
 {
-
     public function testGroup()
     {
         $private_params = [

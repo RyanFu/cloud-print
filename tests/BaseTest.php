@@ -5,9 +5,8 @@
  * Date: 2021-09-28 21:17
  */
 
-namespace whereof\cloudPrint\Test;
+namespace whereof\cloudPrint\Tests;
 
-use GuzzleHttp\Client;
 use PHPUnit\Framework\TestCase;
 use whereof\cloudPrint\Factory;
 
@@ -18,15 +17,12 @@ use whereof\cloudPrint\Factory;
  */
 class BaseTest extends TestCase
 {
-    /**
-     *
-     */
-    public function testFactory()
+
+    public function testBase()
     {
-        $this->assertEquals(1, 1);
+        $this->assertEquals(1,1);
+
     }
-
-
     /**
      * @param $name
      * @param $app
@@ -35,7 +31,6 @@ class BaseTest extends TestCase
     public function mockApiClient($name, $app)
     {
         $client = \Mockery::mock($name, [$app])->makePartial();
-        $client->allows()->getHttpClient()->andReturn(\Mockery::mock(Client::class));
         return $client;
     }
 
@@ -56,8 +51,8 @@ class BaseTest extends TestCase
     public function Jolimark()
     {
         return Factory::Jolimark([
-            'app_id'  => '',
-            'app_key' => '',
+            'app_id'  => 'dasdas',
+            'app_key' => 'fsjkdfklsadsadsa',
         ]);
     }
 
@@ -67,8 +62,8 @@ class BaseTest extends TestCase
     public function Kuaidi100()
     {
         return Factory::Kuaidi100([
-            'key'    => '',
-            'secret' => '',
+            'key'    => 'daskdlaskd',
+            'secret' => 'fdsjfjdsklfjks',
         ]);
     }
 
@@ -78,8 +73,8 @@ class BaseTest extends TestCase
     public function Poscom()
     {
         return Factory::Poscom([
-            'memberCode' => '',
-            'apiKey'     => '',
+            'memberCode' => 'fsklfkasld',
+            'apiKey'     => 'fjaksljfkalsjkjk',
         ]);
     }
 
@@ -89,7 +84,7 @@ class BaseTest extends TestCase
     public function Printcenter()
     {
         return Factory::Printcenter([
-            'key' => '',
+            'key' => 'fasjkldjaskl',
         ]);
 
     }
@@ -112,8 +107,8 @@ class BaseTest extends TestCase
     public function Xpyun()
     {
         return Factory::Xpyun([
-            'user'    => '',
-            'userKey' => '',
+            'user'    => 'fsjklfjklsdaf',
+            'userKey' => 'fksdfklsdkflskdlf;',
         ]);
     }
 
@@ -123,8 +118,8 @@ class BaseTest extends TestCase
     public function Yilianyun()
     {
         return Factory::Yilianyun([
-            'client_id'     => '',
-            'client_secret' => '',
+            'client_id'     => 'fsdkalfjklsajdfk',
+            'client_secret' => 'sdaksldjaskldjaskljkl',
         ]);
 
     }

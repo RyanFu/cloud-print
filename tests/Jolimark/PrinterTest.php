@@ -2,14 +2,20 @@
 /*
  * Desc: 
  * User: zhiqiang
- * Date: 2021-09-29 01:01
+ * Date: 2021-10-06 17:25
  */
 
-namespace whereof\cloudPrint\Test;
+namespace whereof\cloudPrint\Tests\Jolimark;
 
 use whereof\cloudPrint\Jolimark\Printer;
+use whereof\cloudPrint\Tests\BaseTest;
 
-class JolimarkTest extends BaseTest
+/**
+ * Class PrinterTest
+ * @author zhiqiang
+ * @package whereof\cloudPrint\Tests\Jolimark
+ */
+class PrinterTest extends BaseTest
 {
     public function methodPrivateParams($method, $private_params)
     {

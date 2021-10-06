@@ -5,7 +5,7 @@
  * Date: 2021-09-28 16:28
  */
 
-namespace whereof\cloudPrint\Test;
+namespace whereof\cloudPrint\Tests;
 
 
 /**

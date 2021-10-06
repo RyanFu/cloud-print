@@ -2,20 +2,29 @@
 /*
  * Desc: 
  * User: zhiqiang
- * Date: 2021-09-29 00:17
+ * Date: 2021-10-06 17:27
  */
 
-namespace whereof\cloudPrint\Test;
+namespace whereof\cloudPrint\Tests\Printcenter;
 
 use whereof\cloudPrint\Printcenter\Printer;
+use whereof\cloudPrint\Tests\BaseTest;
 
 /**
- * Class FeieyunTest
+ * Class PrinterTest
  * @author zhiqiang
- * @package whereof\cloudPrint\Test
+ * @package whereof\cloudPrint\Tests\Printcenter
  */
-class PrintcenterTest extends BaseTest
+class PrinterTest extends BaseTest
 {
+
+    public function methodPrivateParams($method, $private_params)
+    {
+        $app    = $this->Printcenter();
+        $client = $this->mockApiClient(Printer::class, $app);
+        $data   = json_decode($client->$method($private_params), true);
+        $this->assertIsArray($data);
+    }
 
 
     public function testStatus()
@@ -44,11 +53,5 @@ class PrintcenterTest extends BaseTest
         $this->methodPrivateParams('orderState', $private_params);
     }
 
-    public function methodPrivateParams($method, $private_params)
-    {
-        $app    = $this->Printcenter();
-        $client = $this->mockApiClient(Printer::class, $app);
-        $data   = json_decode($client->$method($private_params), true);
-        $this->assertIsArray($data);
-    }
+
 }

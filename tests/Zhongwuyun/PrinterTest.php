@@ -2,16 +2,21 @@
 /*
  * Desc: 
  * User: zhiqiang
- * Date: 2021-09-29 01:52
+ * Date: 2021-10-06 17:30
  */
 
-namespace whereof\cloudPrint\Test;
+namespace whereof\cloudPrint\Tests\Zhongwuyun;
 
+use whereof\cloudPrint\Tests\BaseTest;
 use whereof\cloudPrint\Zhongwuyun\Printer;
 
-class ZhongwuyunTest extends BaseTest
+/**
+ * Class PrinterTest
+ * @author zhiqiang
+ * @package whereof\cloudPrint\Tests\Zhongwuyun
+ */
+class PrinterTest extends BaseTest
 {
-
     public function testStatus()
     {
         $private_params = [
