@@ -3,8 +3,6 @@
 
 namespace whereof\cloudPrint\Yilianyun;
 
-
-use Ramsey\Uuid\Uuid;
 use whereof\cloudPrint\Kernel\BaseClient;
 use whereof\cloudPrint\Kernel\Support\Timer;
 
@@ -34,7 +32,7 @@ class YilianyunClient extends BaseClient
             'client_id' => $this->config['client_id'],
             'sign'      => $this->sign($timestamp),
             'timestamp' => $timestamp,
-            'id'        => Uuid::uuid4()->toString()
+            'id'        => $this->uuid()
         ];
         if ($action != 'oauth/oauth') {
             $public_params['access_token'] = $this->accessToken();
@@ -86,5 +84,18 @@ class YilianyunClient extends BaseClient
     protected function sign($timestamp)
     {
         return md5($this->config['client_id'] . $timestamp . $this->config['client_secret']);
+    }
+
+    /**
+     * @return string
+     */
+    protected function uuid()
+    {
+        $chars = md5(uniqid(mt_rand(), true));
+        return substr($chars, 0, 8) . '-'
+            . substr($chars, 8, 4) . '-'
+            . substr($chars, 12, 4) . '-'
+            . substr($chars, 16, 4) . '-'
+            . substr($chars, 20, 12);
     }
 }

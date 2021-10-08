@@ -21,7 +21,7 @@ class FileCache implements CacheInterface
      * @param int $ttl
      * @return bool
      */
-    public function setCache($key, $value, int $ttl = 0)
+    public function setCache($key, $value, $ttl = 0)
     {
         return $this->getSystemAdapter()->set($key, $value, $ttl);
     }

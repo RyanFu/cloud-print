@@ -17,7 +17,7 @@ interface CacheInterface
      * @param int $ttl
      * @return mixed
      */
-    public function setCache($key, $value, int $ttl = 0);
+    public function setCache($key, $value, $ttl = 0);
 
     /**
      * 获取缓存
