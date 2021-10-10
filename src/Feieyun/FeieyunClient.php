@@ -29,7 +29,7 @@ class FeieyunClient extends BaseClient
     {
         $timestamp     = Timer::timeStamp();
         $public_params = [
-            'user'    => $this->config('user'),
+            'user'    => $this->config['user'],
             'stime'   => $timestamp,
             'sig'     => $this->getSig($timestamp),
             'apiname' => $action,
@@ -49,6 +49,6 @@ class FeieyunClient extends BaseClient
      */
     protected function getSig($timestamp)
     {
-        return sha1($this->config('user') . $this->config('ukey') . $timestamp);
+        return sha1($this->config['user'] . $this->config['ukey'] . $timestamp);
     }
 }
