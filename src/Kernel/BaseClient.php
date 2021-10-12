@@ -6,8 +6,6 @@ namespace whereof\cloudPrint\Kernel;
 
 use whereof\cloudPrint\Kernel\Interfaces\CacheInterface;
 use whereof\Helper\ArrayHelper;
-use whereof\Helper\StrHelper;
-use whereof\HttpClient;
 use whereof\Logger\Logger;
 
 

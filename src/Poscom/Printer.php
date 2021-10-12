@@ -43,11 +43,11 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
      */
     public function updateGroup($private_params)
     {
-        return $this->request('POST', 'apisc/editgroup', $private_params);
+//        return $this->request('POST', 'apisc/editgroup', $private_params);
     }
 
     /**
@@ -55,11 +55,11 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
      */
     public function delGroup($private_params)
     {
-        return $this->request('POST', 'apisc/delgroup', $private_params);
+//        return $this->request('POST', 'apisc/delgroup', $private_params);
     }
 
 
@@ -68,7 +68,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
      */
     public function register($private_params)
     {
@@ -80,7 +80,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
      */
     public function update($private_params)
     {
@@ -92,7 +92,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
      */
     public function delete($private_params)
     {
@@ -104,7 +104,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
      */
     public function status($private_params)
     {
@@ -116,7 +116,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
      */
     public function listTemplate($private_params)
     {
@@ -128,7 +128,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
      */
     public function setTempletPrint($private_params)
     {
@@ -141,7 +141,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $type
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
      */
     public function print($private_params, $type = '')
     {
@@ -154,11 +154,11 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
      */
     public function clean($private_params)
     {
-        return $this->request('POST', 'apisc/cancelPrint', $private_params);
+//        return $this->request('POST', 'apisc/cancelPrint', $private_params);
     }
 
     /**
@@ -166,7 +166,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
      */
     public function orderState($private_params)
     {
@@ -178,7 +178,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
      */
     public function setVoice($private_params)
     {
@@ -190,7 +190,7 @@ class Printer extends PoscomClient implements PrinterInterface
      * @param $private_params
      * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
      */
     public function setVoiceType($private_params)
     {
