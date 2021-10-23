@@ -148,10 +148,8 @@ $printer = \whereof\cloudPrint\Factory::Feieyun([
 
 
 
-##  联系信息
-
-- 电子邮箱：[wangzhiqiang1224@gmail.com](mailto:wangzhiqiang1224@gmail.com)
-- WeChat：wangzhiqiang992
+##  关于我
+https://github.com/whereof/whereof
 
 
 ##  许可协议
