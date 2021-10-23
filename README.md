@@ -140,6 +140,19 @@ $printer = \whereof\cloudPrint\Factory::Feieyun([
 - [优声云](https://www.ushengyun.com/)
 
 
+
+
+##  加入我们
+
+如果你认可我们的开源项目，有兴趣为 cloud-print 的发展做贡献，竭诚欢迎加入我们一起开发完善。无论是[报告错误](https://github.com/whereof/cloud-print/issues)或是 Pull Request 开发，那怕是修改一个错别字也是对我们莫大的帮助。
+
+
+
+##  联系信息
+
+- 电子邮箱：[wangzhiqiang1224@gmail.com](mailto:wangzhiqiang1224@gmail.com)
+- WeChat：wangzhiqiang992
+
 ## LICENSE
 
 MIT
