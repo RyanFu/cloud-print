@@ -153,7 +153,7 @@ $printer = \whereof\cloudPrint\Factory::Feieyun([
 - 电子邮箱：[wangzhiqiang1224@gmail.com](mailto:wangzhiqiang1224@gmail.com)
 - WeChat：wangzhiqiang992
 
-## LICENSE
 
-MIT
+##  许可协议
+cloud-print 是根据 [MIT](https://opensource.org/licenses/MIT) 授权的开源软件。
 
