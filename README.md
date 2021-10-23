@@ -155,5 +155,5 @@ $printer = \whereof\cloudPrint\Factory::Feieyun([
 
 
 ##  许可协议
-cloud-print 是根据 [MIT](https://opensource.org/licenses/MIT) 授权的开源软件。
+[MIT](https://opensource.org/licenses/MIT)
 
