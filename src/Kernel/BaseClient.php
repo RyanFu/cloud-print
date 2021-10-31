@@ -1,17 +1,13 @@
 <?php
 
-
 namespace whereof\cloudPrint\Kernel;
-
 
 use whereof\cloudPrint\Kernel\Interfaces\CacheInterface;
 use whereof\Helper\ArrayHelper;
 use whereof\Logger\Logger;
 
-
 /**
- * Class BaseClient
- * @package whereof\cloudPrint\Kernel
+ * Class BaseClient.
  */
 class BaseClient
 {
@@ -28,17 +24,19 @@ class BaseClient
 
     /**
      * BaseClient constructor.
+     *
      * @param ServiceContainer $app
      */
     public function __construct(ServiceContainer $app)
     {
-        $this->app    = $app;
+        $this->app = $app;
         $this->config = $app->getConfig();
     }
 
     /**
-     * @return FileCache
      * @throws \Exception
+     *
+     * @return FileCache
      */
     public function cache()
     {
@@ -46,6 +44,7 @@ class BaseClient
         if ($cache instanceof CacheInterface) {
             return $cache;
         }
+
         return new FileCache();
     }
 
@@ -53,6 +52,7 @@ class BaseClient
      * @param $message
      * @param $request
      * @param $response
+     *
      * @throws \Exception
      */
     public function debug($message, $request, $response)

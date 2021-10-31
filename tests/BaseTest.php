@@ -1,6 +1,6 @@
 <?php
 /*
- * Desc: 
+ * Desc:
  * User: zhiqiang
  * Date: 2021-09-28 21:17
  */
@@ -11,26 +11,27 @@ use PHPUnit\Framework\TestCase;
 use whereof\cloudPrint\Factory;
 
 /**
- * Class BaseTest
+ * Class BaseTest.
+ *
  * @author zhiqiang
- * @package whereof\cloudPrint\Test
  */
 class BaseTest extends TestCase
 {
-
     public function testBase()
     {
-        $this->assertEquals(1,1);
-
+        $this->assertEquals(1, 1);
     }
+
     /**
      * @param $name
      * @param $app
+     *
      * @return \Mockery\Mock
      */
     public function mockApiClient($name, $app)
     {
         $client = \Mockery::mock($name, [$app])->makePartial();
+
         return $client;
     }
 
@@ -86,7 +87,6 @@ class BaseTest extends TestCase
         return Factory::Printcenter([
             'key' => 'fasjkldjaskl',
         ]);
-
     }
 
     /**
@@ -98,7 +98,6 @@ class BaseTest extends TestCase
             'appId'     => '10001',
             'appSecret' => '**********',
         ]);
-
     }
 
     /**
@@ -121,7 +120,6 @@ class BaseTest extends TestCase
             'client_id'     => 'fsdkalfjklsajdfk',
             'client_secret' => 'sdaksldjaskldjaskljkl',
         ]);
-
     }
 
     /**

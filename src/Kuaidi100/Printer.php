@@ -1,19 +1,14 @@
 <?php
 
-
 namespace whereof\cloudPrint\Kuaidi100;
-
-
 
 use whereof\cloudPrint\Kernel\Interfaces\PrinterInterface;
 
 /**
- * Class Printer
- * @package whereof\cloudPrint\Kuaidi100
+ * Class Printer.
  */
 class Printer extends Kuaidi100Client implements PrinterInterface
 {
-
     /**
      * @var string
      */
@@ -25,8 +20,10 @@ class Printer extends Kuaidi100Client implements PrinterInterface
     protected $eorderapi_host = 'http://poll.kuaidi100.com/eorderapi.do';
 
     /**
-     * 添加打印机
+     * 添加打印机.
+     *
      * @param $private_params
+     *
      * @return mixed
      */
     public function register($private_params)
@@ -35,8 +32,10 @@ class Printer extends Kuaidi100Client implements PrinterInterface
     }
 
     /**
-     * 删除打印机
+     * 删除打印机.
+     *
      * @param $private_params
+     *
      * @return mixed
      */
     public function delete($private_params)
@@ -44,13 +43,14 @@ class Printer extends Kuaidi100Client implements PrinterInterface
         // TODO: Implement delete() method.
     }
 
-
-
     /**
      * 获取某台打印机状态
+     *
      * @param $private_params
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed
      */
     public function status($private_params)
     {
@@ -58,9 +58,11 @@ class Printer extends Kuaidi100Client implements PrinterInterface
     }
 
     /**
-     * 打印
+     * 打印.
+     *
      * @param $private_params
      * @param $type
+     *
      * @return mixed
      */
     public function print($private_params, $type)
@@ -70,10 +72,13 @@ class Printer extends Kuaidi100Client implements PrinterInterface
 
     /**
      * 电子面单打印接口
-     * https://api.kuaidi100.com/document/5f0ff6adbc8da837cbd8aef8
+     * https://api.kuaidi100.com/document/5f0ff6adbc8da837cbd8aef8.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return string
      */
     public function orderPrint($private_params)
     {
@@ -82,10 +87,13 @@ class Printer extends Kuaidi100Client implements PrinterInterface
 
     /**
      * 电子面单重复打印
-     * https://api.kuaidi100.com/document/5f702a95f27ea83ce5f37b21
+     * https://api.kuaidi100.com/document/5f702a95f27ea83ce5f37b21.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return string
      */
     public function orderRptPrint($private_params)
     {
@@ -94,10 +102,13 @@ class Printer extends Kuaidi100Client implements PrinterInterface
 
     /**
      * 电子面单图片接口
-     * https://api.kuaidi100.com/document/5f0ff6b8bc8da837cbd8aef9
+     * https://api.kuaidi100.com/document/5f0ff6b8bc8da837cbd8aef9.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return string
      */
     public function picPrint($private_params)
     {
@@ -106,36 +117,43 @@ class Printer extends Kuaidi100Client implements PrinterInterface
 
     /**
      * 电子面单HTML接口
-     * https://api.kuaidi100.com/document/5f0ff6c42977d50a94e10236
+     * https://api.kuaidi100.com/document/5f0ff6c42977d50a94e10236.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return string
      */
     public function htmlPrint($private_params)
     {
         return $this->request($this->eorderapi_host, 'getElecOrder', $private_params);
     }
 
-
     /**
      * 国际电子面单
-     * https://api.kuaidi100.com/document/6089416bdb296372f4abfc33
+     * https://api.kuaidi100.com/document/6089416bdb296372f4abfc33.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return string
      */
     public function intPrint($private_params)
     {
         return $this->request($this->eorderapi_host, 'intership', $private_params);
     }
 
-
     /**
      * 自定义打印接口
-     * https://api.kuaidi100.com/document/5f0ffbed2977d50a94e1023d
+     * https://api.kuaidi100.com/document/5f0ffbed2977d50a94e1023d.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return string
      */
     public function customPrint($private_params)
     {
@@ -144,23 +162,28 @@ class Printer extends Kuaidi100Client implements PrinterInterface
 
     /**
      * 附件打印接口
-     * https://api.kuaidi100.com/document/5f0ffbed2977d50a94e1023d
+     * https://api.kuaidi100.com/document/5f0ffbed2977d50a94e1023d.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return string
      */
     public function customAttPrint($private_params)
     {
         return $this->request($this->printtask_host, 'imgOrder', $private_params);
     }
 
-
     /**
      * 自定义生成图片接口
-     * https://api.kuaidi100.com/document/5f0ffbed2977d50a94e1023d
+     * https://api.kuaidi100.com/document/5f0ffbed2977d50a94e1023d.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return string
      */
     public function customPicPrint($private_params)
     {
@@ -169,10 +192,13 @@ class Printer extends Kuaidi100Client implements PrinterInterface
 
     /**
      * 自定义复打接口
-     * https://api.kuaidi100.com/document/5f0ffbed2977d50a94e1023d
+     * https://api.kuaidi100.com/document/5f0ffbed2977d50a94e1023d.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return string
      */
     public function customRptPrint($private_params)
     {
@@ -180,8 +206,10 @@ class Printer extends Kuaidi100Client implements PrinterInterface
     }
 
     /**
-     * 清空待打印队列
+     * 清空待打印队列.
+     *
      * @param $private_params
+     *
      * @return mixed
      */
     public function clean($private_params)
@@ -191,12 +219,13 @@ class Printer extends Kuaidi100Client implements PrinterInterface
 
     /**
      * 查询订单是否打印成功
+     *
      * @param $private_params
+     *
      * @return mixed
      */
     public function orderState($private_params)
     {
         // TODO: Implement orderState() method.
     }
-
 }

@@ -1,15 +1,12 @@
 <?php
 
-
 namespace whereof\cloudPrint\Yilianyun;
-
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
 /**
- * Class ServiceProvider
- * @package whereof\cloudPrint\Yilianyun
+ * Class ServiceProvider.
  */
 class ServiceProvider implements ServiceProviderInterface
 {

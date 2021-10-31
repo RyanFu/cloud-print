@@ -1,49 +1,50 @@
 <?php
 
-
 namespace whereof\cloudPrint\Yilianyun;
 
 use whereof\cloudPrint\Kernel\Interfaces\PrinterInterface;
 
 /**
- * Class Printer
- * @package whereof\cloudPrint\Yilianyun
+ * Class Printer.
  */
 class Printer extends YilianyunClient implements PrinterInterface
 {
-
     /**
-     * 添加打印机
+     * 添加打印机.
+     *
      * @param $private_params
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return mixed
      */
     public function register($private_params)
     {
         return $this->request('printer/addprinter', $private_params);
     }
 
-
     /**
-     * 删除打印机
+     * 删除打印机.
+     *
      * @param $private_params
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return mixed
      */
     public function delete($private_params)
     {
         return $this->request('printer/deleteprinter', $private_params);
     }
 
-
     /**
      * 获取某台打印机状态
+     *
      * @param $private_params
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return mixed
      */
     public function status($private_params)
     {
@@ -51,11 +52,13 @@ class Printer extends YilianyunClient implements PrinterInterface
     }
 
     /**
-     * 关机重启接口
+     * 关机重启接口.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function restart($private_params)
     {
@@ -63,11 +66,13 @@ class Printer extends YilianyunClient implements PrinterInterface
     }
 
     /**
-     * 声音调节接口
+     * 声音调节接口.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function setSound($private_params)
     {
@@ -75,11 +80,13 @@ class Printer extends YilianyunClient implements PrinterInterface
     }
 
     /**
-     * 设置内置语音接口
+     * 设置内置语音接口.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function setVoice($private_params)
     {
@@ -87,11 +94,13 @@ class Printer extends YilianyunClient implements PrinterInterface
     }
 
     /**
-     * 删除内置语音接口
+     * 删除内置语音接口.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function deleteVoice($private_params)
     {
@@ -99,12 +108,14 @@ class Printer extends YilianyunClient implements PrinterInterface
     }
 
     /**
-     * 打印
+     * 打印.
+     *
      * @param $private_params
      * @param $type
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return mixed
      */
     public function print($private_params, $type)
     {
@@ -114,15 +125,18 @@ class Printer extends YilianyunClient implements PrinterInterface
         if ($type == 'express') {
             return $this->expressPrint($private_params);
         }
+
         return $this->textPrint($private_params);
     }
 
     /**
-     * 文本打印
+     * 文本打印.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function textPrint($private_params)
     {
@@ -130,11 +144,13 @@ class Printer extends YilianyunClient implements PrinterInterface
     }
 
     /**
-     * 图形打印
+     * 图形打印.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function picPrint($private_params)
     {
@@ -142,11 +158,13 @@ class Printer extends YilianyunClient implements PrinterInterface
     }
 
     /**
-     * 面单打印
+     * 面单打印.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function expressPrint($private_params)
     {
@@ -154,11 +172,13 @@ class Printer extends YilianyunClient implements PrinterInterface
     }
 
     /**
-     * 清空待打印队列
+     * 清空待打印队列.
+     *
      * @param $private_params
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return mixed
      */
     public function clean($private_params)
     {
@@ -166,11 +186,13 @@ class Printer extends YilianyunClient implements PrinterInterface
     }
 
     /**
-     * 取消所有未打印订单
+     * 取消所有未打印订单.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function cleanAll($private_params)
     {
@@ -179,22 +201,24 @@ class Printer extends YilianyunClient implements PrinterInterface
 
     /**
      * 查询订单是否打印成功
+     *
      * @param $private_params
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return mixed
      */
     public function orderState($private_params)
     {
         return $this->request('printer/getorderstatus', $private_params);
     }
 
-
     /**
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function orderList($private_params)
     {

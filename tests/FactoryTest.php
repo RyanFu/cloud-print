@@ -1,21 +1,19 @@
 <?php
 /*
- * Desc: 
+ * Desc:
  * User: zhiqiang
  * Date: 2021-09-28 16:28
  */
 
 namespace whereof\cloudPrint\Tests;
 
-
 /**
- * Class FactoryTest
+ * Class FactoryTest.
+ *
  * @author zhiqiang
- * @package whereof\cloudPrint\Test
  */
 class FactoryTest extends BaseTest
 {
-
     public function testFeieyun()
     {
         $app = $this->Feieyun();

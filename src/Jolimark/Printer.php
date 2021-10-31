@@ -1,26 +1,23 @@
 <?php
 
-
 namespace whereof\cloudPrint\Jolimark;
-
 
 use UnexpectedValueException;
 use whereof\cloudPrint\Kernel\Interfaces\PrinterInterface;
 
 /**
- * Class Printer
- * @package whereof\cloudPrint\Jolimark
- * http://open.jolimark.com/doc/
+ * Class Printer.
  */
 class Printer extends JolimarkClient implements PrinterInterface
 {
-
     /**
-     * 添加打印机
+     * 添加打印机.
+     *
      * @param $private_params
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return mixed
      */
     public function register($private_params)
     {
@@ -28,11 +25,13 @@ class Printer extends JolimarkClient implements PrinterInterface
     }
 
     /**
-     * 检查打印机绑定结果
+     * 检查打印机绑定结果.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function isRegister($private_params)
     {
@@ -40,24 +39,27 @@ class Printer extends JolimarkClient implements PrinterInterface
     }
 
     /**
-     * 删除打印机
+     * 删除打印机.
+     *
      * @param $private_params
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return mixed
      */
     public function delete($private_params)
     {
         return $this->request('POST', 'mcp/v3/sys/UnBindPrinter', $private_params);
     }
 
-
     /**
      * 获取某台打印机状态
+     *
      * @param $private_params
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return mixed
      */
     public function status($private_params)
     {
@@ -65,12 +67,14 @@ class Printer extends JolimarkClient implements PrinterInterface
     }
 
     /**
-     * 打印
+     * 打印.
+     *
      * @param $private_params
      * @param $type
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return mixed
      */
     public function print($private_params, $type)
     {
@@ -122,16 +126,18 @@ class Printer extends JolimarkClient implements PrinterInterface
             default:
                 throw new UnexpectedValueException("{$type} Command not entered");
         }
+
         return $resp;
     }
 
-
     /**
      * 打印映美规范HTML页面-传URL地址
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function urlPrint($private_params)
     {
@@ -139,24 +145,27 @@ class Printer extends JolimarkClient implements PrinterInterface
     }
 
     /**
-     * 打印标准规范HTML页面-传URL
+     * 打印标准规范HTML页面-传URL.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function picPrint($private_params)
     {
         return $this->request('POST', 'mcp/v3/sys/PrintHtmlToPic', $private_params);
     }
 
-
     /**
      * 打印映美规范HTML页面-传HTML代码
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function html2Print($private_params)
     {
@@ -165,10 +174,12 @@ class Printer extends JolimarkClient implements PrinterInterface
 
     /**
      * 打印标准规范HTML页面-传HTML代码
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function htmlPrint($private_params)
     {
@@ -176,24 +187,27 @@ class Printer extends JolimarkClient implements PrinterInterface
     }
 
     /**
-     * 打印标准规范html页面-转灰度图
+     * 打印标准规范html页面-转灰度图.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function grayPrint($private_params)
     {
         return $this->request('POST', 'mcp/v3/sys/PrintHtmlToGrayPic', $private_params);
     }
 
-
     /**
-     * 打印定点坐标文本
+     * 打印定点坐标文本.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function pointTextPrint($private_params)
     {
@@ -202,9 +216,10 @@ class Printer extends JolimarkClient implements PrinterInterface
 
     /**
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function labelPrint($private_params)
     {
@@ -212,11 +227,13 @@ class Printer extends JolimarkClient implements PrinterInterface
     }
 
     /**
-     * 打印快递面单
+     * 打印快递面单.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function expressPrint($private_params)
     {
@@ -224,11 +241,13 @@ class Printer extends JolimarkClient implements PrinterInterface
     }
 
     /**
-     * 用户创建打印模版
+     * 用户创建打印模版.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function printTemp($private_params)
     {
@@ -236,11 +255,13 @@ class Printer extends JolimarkClient implements PrinterInterface
     }
 
     /**
-     * 打印ESC指令
+     * 打印ESC指令.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function printEsc($private_params)
     {
@@ -248,11 +269,13 @@ class Printer extends JolimarkClient implements PrinterInterface
     }
 
     /**
-     * 打印本地文档
+     * 打印本地文档.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function filePrint($private_params)
     {
@@ -260,11 +283,13 @@ class Printer extends JolimarkClient implements PrinterInterface
     }
 
     /**
-     * 打印远程文档
+     * 打印远程文档.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function fileByUrlPrint($private_params)
     {
@@ -272,24 +297,27 @@ class Printer extends JolimarkClient implements PrinterInterface
     }
 
     /**
-     * 增值税专用发票打印
+     * 增值税专用发票打印.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function invoicePrint($private_params)
     {
         return $this->request('POST', 'mcp/v2/sys/PrintInvoice', $private_params);
     }
 
-
     /**
-     * 清空待打印队列
+     * 清空待打印队列.
+     *
      * @param $private_params
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return mixed
      */
     public function clean($private_params)
     {
@@ -298,10 +326,12 @@ class Printer extends JolimarkClient implements PrinterInterface
 
     /**
      * 查询订单是否打印成功
+     *
      * @param $private_params
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return mixed
      */
     public function orderState($private_params)
     {
@@ -310,14 +340,15 @@ class Printer extends JolimarkClient implements PrinterInterface
 
     /**
      * 查询未打印的任务
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * 
+     *
+     * @return string
      */
     public function orderNotPrint($private_params)
     {
         return $this->request('GET', 'mcp/v3/sys/QueryNotPrintTask', $private_params);
     }
-
 }

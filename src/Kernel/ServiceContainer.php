@@ -1,14 +1,11 @@
 <?php
 
-
 namespace whereof\cloudPrint\Kernel;
 
 use Pimple\Container;
 
-
 /**
- * Class ServiceContainer
- * @package whereof\cloudPrint\Kernel
+ * Class ServiceContainer.
  */
 class ServiceContainer extends Container
 {
@@ -27,6 +24,7 @@ class ServiceContainer extends Container
 
     /**
      * ServiceContainer constructor.
+     *
      * @param array $userConfig
      * @param array $values
      */
@@ -47,15 +45,17 @@ class ServiceContainer extends Container
             'http'     => [
                 'timeout' => 30.0,
             ],
-//            'http_log' => [
-//                'enable' => true,
-//            ]
+            //            'http_log' => [
+            //                'enable' => true,
+            //            ]
         ];
+
         return array_replace_recursive($base, $this->defaultConfig, $this->userConfig);
     }
 
     /**
      * @param $id
+     *
      * @return mixed
      */
     public function __get($id)
@@ -89,5 +89,4 @@ class ServiceContainer extends Container
             parent::register(new $provider());
         }
     }
-
 }

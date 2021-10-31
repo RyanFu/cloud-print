@@ -1,17 +1,14 @@
 <?php
 
-
 namespace whereof\cloudPrint\Ushengyun;
-
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
-
 /**
- * Class ServiceProvider
+ * Class ServiceProvider.
+ *
  * @author zhiqiang
- * @package whereof\cloudPrint\Ushengyun
  */
 class ServiceProvider implements ServiceProviderInterface
 {

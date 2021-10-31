@@ -1,6 +1,6 @@
 <?php
 /*
- * Desc: 
+ * Desc:
  * User: zhiqiang
  * Date: 2021-10-06 17:28
  */
@@ -11,18 +11,17 @@ use whereof\cloudPrint\Tests\BaseTest;
 use whereof\cloudPrint\Xpyun\Printer;
 
 /**
- * Class PrinterTest
+ * Class PrinterTest.
+ *
  * @author zhiqiang
- * @package whereof\cloudPrint\Tests\Xpyun
  */
 class PrinterTest extends BaseTest
 {
-
     public function methodPrivateParams($method, $private_params)
     {
-        $app    = $this->Xpyun();
+        $app = $this->Xpyun();
         $client = $this->mockApiClient(Printer::class, $app);
-        $data   = json_decode($client->$method($private_params), true);
+        $data = json_decode($client->$method($private_params), true);
         $this->assertIsArray($data);
     }
 
@@ -48,7 +47,6 @@ class PrinterTest extends BaseTest
         $this->methodPrivateParams('msg', $private_params);
     }
 
-
     public function testLabelMsg()
     {
         $private_params = [
@@ -65,7 +63,6 @@ class PrinterTest extends BaseTest
         $this->methodPrivateParams('labelMsg', $private_params);
     }
 
-
     public function testDelete()
     {
         $private_params = [
@@ -73,7 +70,6 @@ class PrinterTest extends BaseTest
         ];
         $this->methodPrivateParams('delete', $private_params);
     }
-
 
     public function testUpdate()
     {
@@ -110,7 +106,6 @@ class PrinterTest extends BaseTest
         $this->methodPrivateParams('orderInfoByDate', $private_params);
     }
 
-
     public function testStatus()
     {
         $private_params = [
@@ -146,6 +141,4 @@ class PrinterTest extends BaseTest
         ];
         $this->methodPrivateParams('playVoice', $private_params);
     }
-
-
 }
