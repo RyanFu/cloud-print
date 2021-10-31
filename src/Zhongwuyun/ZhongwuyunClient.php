@@ -1,19 +1,15 @@
 <?php
 
-
 namespace whereof\cloudPrint\Zhongwuyun;
-
 
 use whereof\cloudPrint\Kernel\BaseClient;
 use whereof\cloudPrint\Kernel\Support\Timer;
 
 /**
- * Class ZhongwuyunClient
- * @package whereof\cloudPrint\Zhongwuyun
+ * Class ZhongwuyunClient.
  */
 class ZhongwuyunClient extends BaseClient
 {
-
     /**
      * @var string
      */
@@ -23,32 +19,36 @@ class ZhongwuyunClient extends BaseClient
      * @param $action
      * @param $private_params
      * @param bool $is_get
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Exception
+     *
+     * @return string
      */
     public function request($action, $private_params, $is_get = false)
     {
-        $public_params  = [
-            "appid"     => $this->config['appid'],
-            "timestamp" => Timer::timeStamp(),
+        $public_params = [
+            'appid'     => $this->config['appid'],
+            'timestamp' => Timer::timeStamp(),
         ];
-        $params         = array_filter(array_merge($public_params, $private_params));
+        $params = array_filter(array_merge($public_params, $private_params));
         $params['sign'] = $this->sign($params);
-        $url            = $this->config['host'] ?? $this->host . "/" . $action;
+        $url = $this->config['host'] ?? $this->host.'/'.$action;
         if ($is_get) {
             $methed = 'GET';
-            $resp   = $this->httpGet($url, $params);
+            $resp = $this->httpGet($url, $params);
         } else {
             $methed = 'POST';
-            $resp   = $this->httpPost($url, $params);
+            $resp = $this->httpPost($url, $params);
         }
-        $this->debug($methed . ':' . $url, $params, $resp);
+        $this->debug($methed.':'.$url, $params, $resp);
+
         return $resp;
     }
 
     /**
      * @param $params
+     *
      * @return string
      */
     protected function sign($params)
@@ -56,9 +56,10 @@ class ZhongwuyunClient extends BaseClient
         $str = '';
         ksort($params);
         foreach ($params as $k => $v) {
-            $str .= $k . $v;
+            $str .= $k.$v;
         }
         $str .= $this->config['appsecret'];
+
         return md5($str);
     }
 }

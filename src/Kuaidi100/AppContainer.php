@@ -1,19 +1,17 @@
 <?php
 
-
 namespace whereof\cloudPrint\Kuaidi100;
-
 
 use whereof\cloudPrint\Kernel\ServiceContainer;
 
 /**
- * Class AppContainer
- * @package whereof\cloudPrint\Kuaidi100
+ * Class AppContainer.
+ *
  * @property Printer printer
  */
 class AppContainer extends ServiceContainer
 {
     protected $providers = [
-        ServiceProvider::class
+        ServiceProvider::class,
     ];
 }

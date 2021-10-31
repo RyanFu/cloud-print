@@ -1,6 +1,6 @@
 <?php
 /*
- * Desc: 
+ * Desc:
  * User: zhiqiang
  * Date: 2021-10-06 17:26
  */
@@ -11,9 +11,9 @@ use whereof\cloudPrint\Poscom\Printer;
 use whereof\cloudPrint\Tests\BaseTest;
 
 /**
- * Class PrinterTest
+ * Class PrinterTest.
+ *
  * @author zhiqiang
- * @package whereof\cloudPrint\Tests\Poscom
  */
 class PrinterTest extends BaseTest
 {
@@ -32,7 +32,6 @@ class PrinterTest extends BaseTest
         $this->methodPrivateParams('addGroup', $private_params);
     }
 
-
 //    public function testupdateGroup()
 //    {
 //        $private_params = [
@@ -50,7 +49,6 @@ class PrinterTest extends BaseTest
 //        ];
 //        $this->methodPrivateParams('delGroup', $private_params);
 //    }
-
 
     public function testRegister()
     {
@@ -127,8 +125,6 @@ class PrinterTest extends BaseTest
         $this->methodPrivateParams('orderState', $private_params);
     }
 
-
-
     public function testSetVoice()
     {
         $private_params = [
@@ -169,12 +165,11 @@ class PrinterTest extends BaseTest
 //        $this->methodPrivateParams('setTempletPrint', $private_params);
 //    }
 
-
     public function methodPrivateParams($method, $private_params)
     {
-        $app    = $this->Poscom();
+        $app = $this->Poscom();
         $client = $this->mockApiClient(Printer::class, $app);
-        $data   = json_decode($client->$method($private_params), true);
+        $data = json_decode($client->$method($private_params), true);
         $this->assertIsArray($data);
     }
 }

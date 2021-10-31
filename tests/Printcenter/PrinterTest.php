@@ -1,6 +1,6 @@
 <?php
 /*
- * Desc: 
+ * Desc:
  * User: zhiqiang
  * Date: 2021-10-06 17:27
  */
@@ -11,21 +11,19 @@ use whereof\cloudPrint\Printcenter\Printer;
 use whereof\cloudPrint\Tests\BaseTest;
 
 /**
- * Class PrinterTest
+ * Class PrinterTest.
+ *
  * @author zhiqiang
- * @package whereof\cloudPrint\Tests\Printcenter
  */
 class PrinterTest extends BaseTest
 {
-
     public function methodPrivateParams($method, $private_params)
     {
-        $app    = $this->Printcenter();
+        $app = $this->Printcenter();
         $client = $this->mockApiClient(Printer::class, $app);
-        $data   = json_decode($client->$method($private_params), true);
+        $data = json_decode($client->$method($private_params), true);
         $this->assertIsArray($data);
     }
-
 
     public function testStatus()
     {
@@ -52,6 +50,4 @@ class PrinterTest extends BaseTest
         ];
         $this->methodPrivateParams('orderState', $private_params);
     }
-
-
 }

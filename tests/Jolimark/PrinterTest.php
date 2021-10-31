@@ -1,6 +1,6 @@
 <?php
 /*
- * Desc: 
+ * Desc:
  * User: zhiqiang
  * Date: 2021-10-06 17:25
  */
@@ -11,17 +11,17 @@ use whereof\cloudPrint\Jolimark\Printer;
 use whereof\cloudPrint\Tests\BaseTest;
 
 /**
- * Class PrinterTest
+ * Class PrinterTest.
+ *
  * @author zhiqiang
- * @package whereof\cloudPrint\Tests\Jolimark
  */
 class PrinterTest extends BaseTest
 {
     public function methodPrivateParams($method, $private_params)
     {
-        $app    = $this->Jolimark();
+        $app = $this->Jolimark();
         $client = $this->mockApiClient(Printer::class, $app);
-        $data   = json_decode($client->$method($private_params), true);
+        $data = json_decode($client->$method($private_params), true);
         $this->assertIsArray($data);
     }
 
@@ -56,9 +56,10 @@ class PrinterTest extends BaseTest
         ];
         $this->methodPrivateParams('clean', $private_params);
     }
+
     public function testHtml2Print()
     {
-        $private_params =[
+        $private_params = [
             'device_ids'   => '',
             'copies'       => '',
             'cus_orderid'  => '',
@@ -71,9 +72,10 @@ class PrinterTest extends BaseTest
         ];
         $this->methodPrivateParams('html2Print', $private_params);
     }
+
     public function testHtmlPrint()
     {
-        $private_params =[
+        $private_params = [
             'device_ids'   => '',
             'copies'       => '',
             'cus_orderid'  => '',
@@ -86,9 +88,10 @@ class PrinterTest extends BaseTest
         ];
         $this->methodPrivateParams('htmlPrint', $private_params);
     }
+
     public function testUrlPrint()
     {
-        $private_params =[
+        $private_params = [
             'device_ids'   => '',
             'copies'       => '',
             'cus_orderid'  => '',
@@ -103,7 +106,7 @@ class PrinterTest extends BaseTest
 
     public function testPicPrint()
     {
-        $private_params =[
+        $private_params = [
             'device_ids'   => '',
             'copies'       => '',
             'cus_orderid'  => '',
@@ -115,9 +118,10 @@ class PrinterTest extends BaseTest
         ];
         $this->methodPrivateParams('picPrint', $private_params);
     }
+
     public function testGrayPrint()
     {
-        $private_params =[
+        $private_params = [
             'device_ids'   => '',
             'copies'       => '',
             'cus_orderid'  => '',
@@ -132,7 +136,7 @@ class PrinterTest extends BaseTest
 
     public function testPrintEsc()
     {
-        $private_params =[
+        $private_params = [
             'device_ids'   => '',
             'copies'       => '',
             'cus_orderid'  => '',
@@ -147,7 +151,7 @@ class PrinterTest extends BaseTest
 
     public function testPointTextPrint()
     {
-        $private_params =[
+        $private_params = [
             'device_ids'   => '',
             'copies'       => '',
             'cus_orderid'  => '',
@@ -162,7 +166,7 @@ class PrinterTest extends BaseTest
 
     public function testLabelPrint()
     {
-        $private_params =[
+        $private_params = [
             'device_ids'   => '',
             'copies'       => '',
             'cus_orderid'  => '',
@@ -177,7 +181,7 @@ class PrinterTest extends BaseTest
 
     public function testExpressPrint()
     {
-        $private_params =[
+        $private_params = [
             'device_ids'  => '',
             'copies'      => '',
             'cus_orderid' => '',
@@ -199,7 +203,7 @@ class PrinterTest extends BaseTest
 
     public function testPrintTemp()
     {
-        $private_params =[
+        $private_params = [
             'device_ids'   => '',
             'template_id'  => '',
             'copies'       => '',
@@ -213,7 +217,7 @@ class PrinterTest extends BaseTest
 
     public function testFilePrint()
     {
-        $private_params =[
+        $private_params = [
             'device_ids'   => '',
             'copies'       => '',
             'cus_orderid'  => '',
@@ -228,22 +232,23 @@ class PrinterTest extends BaseTest
 
     public function testFileByUrlPrint()
     {
-        $private_params =[
-            'device_ids'   => '',
-            'copies'       => '',
-            'cus_orderid'  => '',
-            'file_type' => '',
-            'bill_content'  => '',
-            'paper_width' => '',
+        $private_params = [
+            'device_ids'     => '',
+            'copies'         => '',
+            'cus_orderid'    => '',
+            'file_type'      => '',
+            'bill_content'   => '',
+            'paper_width'    => '',
             'paper_height'   => '',
-            'paper_type'   => '',
-            'time_out'     => '',
+            'paper_type'     => '',
+            'time_out'       => '',
         ];
         $this->methodPrivateParams('fileByUrlPrint', $private_params);
     }
+
     public function testInvoicePrint()
     {
-        $private_params =[
+        $private_params = [
             'device_ids'   => '',
             'copies'       => '',
             'cus_orderid'  => '',

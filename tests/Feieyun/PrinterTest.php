@@ -1,6 +1,6 @@
 <?php
 /*
- * Desc: 
+ * Desc:
  * User: zhiqiang
  * Date: 2021-10-06 17:24
  */
@@ -11,9 +11,9 @@ use whereof\cloudPrint\Feieyun\Printer;
 use whereof\cloudPrint\Tests\BaseTest;
 
 /**
- * Class PrinterTest
+ * Class PrinterTest.
+ *
  * @author zhiqiang
- * @package whereof\cloudPrint\Tests\Feieyun
  */
 class PrinterTest extends BaseTest
 {
@@ -22,7 +22,6 @@ class PrinterTest extends BaseTest
         $private_params = ['printerContent' => '316500010 # abcdefgh # 快餐前台 # 13688889999'];
         $this->methodPrivateParams('register', $private_params);
     }
-
 
     public function testDelete()
     {
@@ -66,7 +65,7 @@ class PrinterTest extends BaseTest
         $private_params = [
             'sn'      => '',
             'content' => '',
-            'times'   => 1
+            'times'   => 1,
         ];
         $this->methodPrivateParams('msg', $private_params);
     }
@@ -96,12 +95,11 @@ class PrinterTest extends BaseTest
         $this->methodPrivateParams('orderInfoByDate', $private_params);
     }
 
-
     public function methodPrivateParams($method, $private_params)
     {
-        $app    = $this->Feieyun();
+        $app = $this->Feieyun();
         $client = $this->mockApiClient(Printer::class, $app);
-        $data   = json_decode($client->$method($private_params), true);
+        $data = json_decode($client->$method($private_params), true);
         $this->assertIsArray($data);
     }
 }

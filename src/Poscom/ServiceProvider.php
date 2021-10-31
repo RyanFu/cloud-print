@@ -1,15 +1,12 @@
 <?php
 
-
 namespace whereof\cloudPrint\Poscom;
-
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
 /**
- * Class ServiceProvider
- * @package whereof\cloudPrint\Poscom
+ * Class ServiceProvider.
  */
 class ServiceProvider implements ServiceProviderInterface
 {

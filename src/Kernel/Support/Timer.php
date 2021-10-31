@@ -1,12 +1,9 @@
 <?php
 
-
 namespace whereof\cloudPrint\Kernel\Support;
 
-
 /**
- * Class Timer
- * @package whereof\cloudPrint\Kernel\Support
+ * Class Timer.
  */
 class Timer
 {

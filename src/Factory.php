@@ -1,14 +1,12 @@
 <?php
 
-
 namespace whereof\cloudPrint;
-
 
 use InvalidArgumentException;
 
 /**
- * Class Factory
- * @package whereof\cloudPrint
+ * Class Factory.
+ *
  * @method static Feieyun\AppContainer Feieyun($config)
  * @method static Xpyun\AppContainer Xpyun($config)
  * @method static Kuaidi100\AppContainer Kuaidi100($config)
@@ -29,24 +27,27 @@ class Factory
     /**
      * @param $name
      * @param array $config
+     *
      * @return mixed
      */
     protected static function make($name, array $config)
     {
-        $app = __NAMESPACE__ . '\\' . $name . '\\AppContainer';
+        $app = __NAMESPACE__.'\\'.$name.'\\AppContainer';
         if (!class_exists($app)) {
-            throw new InvalidArgumentException('class not exists:' . $app);
+            throw new InvalidArgumentException('class not exists:'.$app);
         }
-        $instance = crc32($name . serialize($config));
+        $instance = crc32($name.serialize($config));
         if (!isset(self::$instances[$instance])) {
             self::$instances[$instance] = new $app($config);
         }
+
         return self::$instances[$instance];
     }
 
     /**
      * @param $name
      * @param $arguments
+     *
      * @return mixed
      */
     public static function __callStatic($name, $arguments)

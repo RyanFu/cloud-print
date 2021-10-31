@@ -1,22 +1,20 @@
 <?php
 
-
 namespace whereof\cloudPrint\Printcenter;
-
 
 use whereof\cloudPrint\Kernel\Interfaces\PrinterInterface;
 
 /**
  * http://printcenter.cn/
- * Class Printer
- * @package whereof\cloudPrint\Printcenter
+ * Class Printer.
  */
 class Printer extends PrintcenterClient implements PrinterInterface
 {
-
     /**
-     * 添加打印机
+     * 添加打印机.
+     *
      * @param $private_params
+     *
      * @return mixed
      */
     public function register($private_params)
@@ -25,8 +23,10 @@ class Printer extends PrintcenterClient implements PrinterInterface
     }
 
     /**
-     * 删除打印机
+     * 删除打印机.
+     *
      * @param $private_params
+     *
      * @return mixed
      */
     public function delete($private_params)
@@ -36,9 +36,12 @@ class Printer extends PrintcenterClient implements PrinterInterface
 
     /**
      * 获取某台打印机状态
+     *
      * @param $private_params
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed
      */
     public function status($private_params)
     {
@@ -46,21 +49,27 @@ class Printer extends PrintcenterClient implements PrinterInterface
     }
 
     /**
-     * 打印
+     * 打印.
+     *
      * @param $private_params
      * @param $type
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed
      */
     public function print($private_params, $type = '')
     {
         $private_params['times'] = 1;
+
         return $this->request('addOrder', $private_params);
     }
 
     /**
-     * 清空待打印队列
+     * 清空待打印队列.
+     *
      * @param $private_params
+     *
      * @return mixed
      */
     public function clean($private_params)
@@ -70,9 +79,12 @@ class Printer extends PrintcenterClient implements PrinterInterface
 
     /**
      * 查询订单是否打印成功
+     *
      * @param $private_params
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed
      */
     public function orderState($private_params)
     {

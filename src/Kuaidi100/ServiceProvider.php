@@ -1,15 +1,12 @@
 <?php
 
-
 namespace whereof\cloudPrint\Kuaidi100;
-
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
 /**
- * Class ServiceProvider
- * @package whereof\cloudPrint\Kuaidi100
+ * Class ServiceProvider.
  */
 class ServiceProvider implements ServiceProviderInterface
 {

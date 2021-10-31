@@ -1,24 +1,21 @@
 <?php
 
-
 namespace whereof\cloudPrint\Ushengyun;
-
 
 use whereof\cloudPrint\Kernel\Interfaces\PrinterInterface;
 
-
 /**
- * Class Printer
+ * Class Printer.
+ *
  * @author zhiqiang
- * @package whereof\cloudPrint\Ushengyun
  */
 class Printer extends UshengyunClient implements PrinterInterface
 {
-
-
     /**
-     * 添加打印机
+     * 添加打印机.
+     *
      * @param $private_params
+     *
      * @return mixed
      */
     public function register($private_params)
@@ -27,8 +24,10 @@ class Printer extends UshengyunClient implements PrinterInterface
     }
 
     /**
-     * 删除打印机
+     * 删除打印机.
+     *
      * @param $private_params
+     *
      * @return mixed
      */
     public function delete($private_params)
@@ -38,9 +37,12 @@ class Printer extends UshengyunClient implements PrinterInterface
 
     /**
      * 获取某台打印机状态
+     *
      * @param $private_params
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed
      */
     public function status($private_params)
     {
@@ -48,11 +50,14 @@ class Printer extends UshengyunClient implements PrinterInterface
     }
 
     /**
-     * 打印
+     * 打印.
+     *
      * @param $private_params
      * @param string $type
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed
      */
     public function print($private_params, $type = '')
     {
@@ -60,10 +65,13 @@ class Printer extends UshengyunClient implements PrinterInterface
     }
 
     /**
-     * 清空待打印队列
+     * 清空待打印队列.
+     *
      * @param $private_params
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed
      */
     public function clean($private_params)
     {
@@ -71,34 +79,41 @@ class Printer extends UshengyunClient implements PrinterInterface
     }
 
     /**
-     * 取消单条未打印订单
+     * 取消单条未打印订单.
+     *
      * @param $private_params
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed
      */
     public function cancelOne($private_params)
     {
         return $this->request('cancelone', $private_params);
     }
 
-
     /**
      * 查询订单是否打印成功
+     *
      * @param $private_params
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed
      */
     public function orderState($private_params)
     {
         return $this->request('printstatus', $private_params);
     }
 
-
     /**
-     * 设置设备音量
+     * 设置设备音量.
+     *
      * @param $private_params
-     * @return string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return string
      */
     public function setSound($private_params)
     {
@@ -107,8 +122,10 @@ class Printer extends UshengyunClient implements PrinterInterface
 
     /**
      * @param $private_params
-     * @return bool|string
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return bool|string
      */
     public function setLogo($private_params)
     {
