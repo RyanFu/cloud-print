@@ -2,6 +2,8 @@
 
 namespace whereof\cloudPrint\Yilianyun;
 
+use Exception;
+use GuzzleHttp\Exception\GuzzleException;
 use whereof\cloudPrint\Kernel\BaseClient;
 use whereof\cloudPrint\Kernel\Support\Timer;
 
@@ -19,8 +21,8 @@ class YilianyunClient extends BaseClient
      * @param $action
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Exception
+     * @throws GuzzleException
+     * @throws Exception
      *
      * @return string
      */
@@ -39,22 +41,20 @@ class YilianyunClient extends BaseClient
         $url = $this->buildHost($action);
         $params = array_filter(array_merge($public_params, $private_params));
         $resp = $this->httpPost($url, $params);
-        $this->debug('POST:'.$url, $params, $resp);
-
         return $resp;
     }
 
     /**
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Exception
+     * @throws GuzzleException
+     * @throws Exception
      *
      * @return string
      */
     protected function accessToken()
     {
         $key = md5($this->config['client_id'].$this->config['client_secret']);
-        if ($this->cache()->hasCache($key)) {
-            return $this->cache()->getCache($key);
+        if ($this->app->cache->hasCache($key)) {
+            return $this->app->cache->getCache($key);
         }
         $params = [
             'grant_type' => 'client_credentials',
@@ -65,7 +65,7 @@ class YilianyunClient extends BaseClient
         if (empty($data['body']['access_token'])) {
             return $resp;
         }
-        $this->cache()->setCache($key, $data['body']['access_token'], $data['body']['expires_in']);
+        $this->app->cache->setCache($key, $data['body']['access_token'], $data['body']['expires_in']);
 
         return $data['body']['access_token'];
     }

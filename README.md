@@ -28,21 +28,6 @@
 composer require whereof/cloud-print
 ~~~~
 
-## 请求日志记录
-
-~~~
-'http_log' => [
-	'enable' => true,
-]
-
-$printer = \whereof\cloudPrint\Factory::Feieyun([
-    'user' => '',
-    'ukey' => '',
-    'http_log' => [
-      'enable' => true,
-    ]
-])->printer;
-~~~
 
 ## 案例
 

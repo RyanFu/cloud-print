@@ -2,6 +2,8 @@
 
 namespace whereof\cloudPrint\Ushengyun;
 
+use Exception;
+use GuzzleHttp\Exception\GuzzleException;
 use whereof\cloudPrint\Kernel\BaseClient;
 use whereof\cloudPrint\Kernel\Support\Timer;
 
@@ -21,26 +23,25 @@ class UshengyunClient extends BaseClient
      * @param $action
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Exception
-     *
      * @return string
+     * @throws Exception
+     *
+     * @throws GuzzleException
      */
     public function request($action, $private_params)
     {
-        $time = Timer::timeStamp();
-        $public_params = [
+        $time             = Timer::timeStamp();
+        $public_params    = [
             'appid'     => $this->config['appId'],
             'timestamp' => $time,
         ];
-        $params = array_filter(array_merge($public_params, $private_params));
+        $params           = array_filter(array_merge($public_params, $private_params));
         $protocol['sign'] = $this->sign($params);
-        $url = $this->config['host'] ?? $this->host.'/'.$action;
+        $url              = $this->config['host'] ?? $this->host . '/' . $action;
 
         $resp = $this->httpPostJson($url, [
             'form_params' => $params,
         ]);
-        $this->debug('POST:'.$url, $params, $resp);
 
         return $resp;
     }
@@ -58,11 +59,10 @@ class UshengyunClient extends BaseClient
         ksort($params);
         foreach ($params as $k => $v) {
             if (strlen($v) > 0) {
-                $stringToSigned .= $k.$v;
+                $stringToSigned .= $k . $v;
             }
         }
         $stringToSigned .= $this->config['appSecret'];
-
         return md5($stringToSigned);
     }
 }

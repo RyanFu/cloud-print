@@ -2,6 +2,7 @@
 
 namespace whereof\cloudPrint\Kuaidi100;
 
+use GuzzleHttp\Exception\GuzzleException;
 use whereof\cloudPrint\Kernel\Interfaces\PrinterInterface;
 
 /**
@@ -48,7 +49,7 @@ class Printer extends Kuaidi100Client implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return mixed
      */
@@ -76,7 +77,7 @@ class Printer extends Kuaidi100Client implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -91,7 +92,7 @@ class Printer extends Kuaidi100Client implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -106,7 +107,7 @@ class Printer extends Kuaidi100Client implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -121,7 +122,7 @@ class Printer extends Kuaidi100Client implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -136,7 +137,7 @@ class Printer extends Kuaidi100Client implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -151,7 +152,7 @@ class Printer extends Kuaidi100Client implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -166,7 +167,7 @@ class Printer extends Kuaidi100Client implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -181,7 +182,7 @@ class Printer extends Kuaidi100Client implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -196,7 +197,7 @@ class Printer extends Kuaidi100Client implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */

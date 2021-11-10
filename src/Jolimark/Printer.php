@@ -2,6 +2,7 @@
 
 namespace whereof\cloudPrint\Jolimark;
 
+use GuzzleHttp\Exception\GuzzleException;
 use UnexpectedValueException;
 use whereof\cloudPrint\Kernel\Interfaces\PrinterInterface;
 
@@ -15,7 +16,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return mixed
      */
@@ -29,7 +30,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -43,7 +44,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return mixed
      */
@@ -57,7 +58,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return mixed
      */
@@ -72,7 +73,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      * @param $private_params
      * @param $type
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return mixed
      */
@@ -135,7 +136,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -149,7 +150,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -163,7 +164,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -177,7 +178,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -191,7 +192,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -205,7 +206,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -217,7 +218,7 @@ class Printer extends JolimarkClient implements PrinterInterface
     /**
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -231,7 +232,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -245,7 +246,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -259,7 +260,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -273,7 +274,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -287,7 +288,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -301,7 +302,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */
@@ -315,7 +316,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return mixed
      */
@@ -329,7 +330,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return mixed
      */
@@ -343,7 +344,7 @@ class Printer extends JolimarkClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
      */

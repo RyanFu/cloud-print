@@ -2,6 +2,8 @@
 
 namespace whereof\cloudPrint\Kuaidi100;
 
+use Exception;
+use GuzzleHttp\Exception\GuzzleException;
 use whereof\cloudPrint\Kernel\BaseClient;
 use whereof\cloudPrint\Kernel\Support\Timer;
 
@@ -15,8 +17,8 @@ class Kuaidi100Client extends BaseClient
      * @param $action
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Exception
+     * @throws GuzzleException
+     * @throws Exception
      *
      * @return string
      */
@@ -37,8 +39,6 @@ class Kuaidi100Client extends BaseClient
             $methed = 'POST';
             $resp = $this->httpPost($url, $params);
         }
-        $this->debug($methed.':'.$url, $params, $resp);
-
         return $resp;
     }
 

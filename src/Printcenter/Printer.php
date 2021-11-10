@@ -2,6 +2,7 @@
 
 namespace whereof\cloudPrint\Printcenter;
 
+use GuzzleHttp\Exception\GuzzleException;
 use whereof\cloudPrint\Kernel\Interfaces\PrinterInterface;
 
 /**
@@ -39,7 +40,7 @@ class Printer extends PrintcenterClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return mixed
      */
@@ -54,7 +55,7 @@ class Printer extends PrintcenterClient implements PrinterInterface
      * @param $private_params
      * @param $type
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return mixed
      */
@@ -82,7 +83,7 @@ class Printer extends PrintcenterClient implements PrinterInterface
      *
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return mixed
      */

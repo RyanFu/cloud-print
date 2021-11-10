@@ -4,8 +4,13 @@ namespace whereof\cloudPrint\Kernel;
 
 use Pimple\Container;
 
+
 /**
- * Class ServiceContainer.
+ * Class ServiceContainer
+ * @author zhiqiang
+ * @package whereof\cloudPrint\Kernel
+ *
+ * @property Clients\CacheClient cache
  */
 class ServiceContainer extends Container
 {
@@ -42,12 +47,16 @@ class ServiceContainer extends Container
     {
         $base = [
             // http://docs.guzzlephp.org/en/stable/request-options.html
-            'http'     => [
+            'http' => [
                 'timeout' => 30.0,
             ],
-            //            'http_log' => [
-            //                'enable' => true,
-            //            ]
+//            'http_log' => [
+//                'enable' => true,
+//            ],
+//            'cache'    => [
+//                'prefix' => 'cloud_print',
+//                'path'   => './.runtime/cache',
+//            ]
         ];
 
         return array_replace_recursive($base, $this->defaultConfig, $this->userConfig);
@@ -77,7 +86,9 @@ class ServiceContainer extends Container
      */
     public function getProviders()
     {
-        return $this->providers;
+        return array_merge($this->providers, [
+            ServiceProvider::class,
+        ]);
     }
 
     /**

@@ -2,6 +2,8 @@
 
 namespace whereof\cloudPrint\Poscom;
 
+use Exception;
+use GuzzleHttp\Exception\GuzzleException;
 use whereof\cloudPrint\Kernel\BaseClient;
 
 /**
@@ -19,8 +21,8 @@ class PoscomClient extends BaseClient
      * @param $action
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Exception
+     * @throws GuzzleException
+     * @throws Exception
      *
      * @return string
      */
@@ -38,7 +40,6 @@ class PoscomClient extends BaseClient
         $resp = $this->httpRequest($method, $url, [
             'form_params' => $params,
         ]);
-        $this->debug($method.':'.$url, $params, $resp);
 
         return $resp;
     }

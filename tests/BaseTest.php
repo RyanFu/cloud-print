@@ -7,8 +7,11 @@
 
 namespace whereof\cloudPrint\Tests;
 
+use Mockery;
+use Mockery\Mock;
 use PHPUnit\Framework\TestCase;
 use whereof\cloudPrint\Factory;
+use whereof\cloudPrint\Zhongwuyun\AppContainer;
 
 /**
  * Class BaseTest.
@@ -26,11 +29,11 @@ class BaseTest extends TestCase
      * @param $name
      * @param $app
      *
-     * @return \Mockery\Mock
+     * @return Mock
      */
     public function mockApiClient($name, $app)
     {
-        $client = \Mockery::mock($name, [$app])->makePartial();
+        $client = Mockery::mock($name, [$app])->makePartial();
 
         return $client;
     }
@@ -123,7 +126,7 @@ class BaseTest extends TestCase
     }
 
     /**
-     * @return \whereof\cloudPrint\Zhongwuyun\AppContainer
+     * @return AppContainer
      */
     public function Zhongwuyun()
     {

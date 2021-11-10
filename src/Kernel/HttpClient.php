@@ -9,17 +9,17 @@ namespace whereof\cloudPrint\Kernel;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use InvalidArgumentException;
 
 trait HttpClient
 {
     /**
      * @param string $url
-     * @param array  $query
-     * @param array  $headers
-     *
-     * @throws GuzzleException
+     * @param array $query
+     * @param array $headers
      *
      * @return string
+     * @throws GuzzleException
      */
     protected function httpGet(string $url, array $query = [], array $headers = [])
     {
@@ -91,9 +91,8 @@ trait HttpClient
     protected function httpClient()
     {
         if (!class_exists(Client::class)) {
-            throw new \InvalidArgumentException('Not installed guzzlehttp/guzzle');
+            throw new InvalidArgumentException('Not installed guzzlehttp/guzzle');
         }
-
         return new Client($this->config['http'] ?? []);
     }
 }

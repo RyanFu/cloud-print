@@ -1,23 +1,23 @@
 <?php
+/*
+ * Desc: 
+ * User: zhiqiang
+ * Date: 2021-11-10 22:38
+ */
 
-namespace whereof\cloudPrint\Kernel;
+namespace whereof\cloudPrint\Kernel\Clients;
 
 use whereof\Cache\CacheManager;
 use whereof\Cache\DriverAbstract;
-use whereof\cloudPrint\Kernel\Interfaces\CacheInterface;
+use whereof\cloudPrint\Kernel\BaseClient;
 
-/**
- * Class Cache.
- */
-class FileCache implements CacheInterface
+class CacheClient extends BaseClient
 {
     /**
      * 设置缓存.
-     *
      * @param $key
      * @param $value
      * @param int $ttl
-     *
      * @return bool
      */
     public function setCache($key, $value, $ttl = 0)
@@ -27,9 +27,7 @@ class FileCache implements CacheInterface
 
     /**
      * 获取缓存.
-     *
      * @param $key
-     *
      * @return mixed
      */
     public function getCache($key)
@@ -39,9 +37,7 @@ class FileCache implements CacheInterface
 
     /**
      * 判断缓存是否存在.
-     *
      * @param $key
-     *
      * @return mixed
      */
     public function hasCache($key)
@@ -51,9 +47,7 @@ class FileCache implements CacheInterface
 
     /**
      * 删除缓存.
-     *
      * @param $key
-     *
      * @return bool
      */
     public function deleteCache($key)
@@ -66,9 +60,10 @@ class FileCache implements CacheInterface
      */
     private function getSystemAdapter()
     {
-        return CacheManager::File([
-            'prefix' => 'cloud_print',
-            'path'   => './.runtime/cache',
-        ]);
+        $config = $this->config['cache'] ?? [
+                'prefix' => 'cloud_print',
+                'path'   => './.runtime/cache',
+            ];
+        return CacheManager::File($config);
     }
 }

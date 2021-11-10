@@ -2,6 +2,8 @@
 
 namespace whereof\cloudPrint\Jolimark;
 
+use Exception;
+use GuzzleHttp\Exception\GuzzleException;
 use whereof\cloudPrint\Kernel\BaseClient;
 use whereof\cloudPrint\Kernel\Support\Timer;
 
@@ -24,14 +26,14 @@ class JolimarkClient extends BaseClient
      * @param $action
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Exception
-     *
      * @return string
+     * @throws Exception
+     *
+     * @throws GuzzleException
      */
     public function request($method, $action, $private_params)
     {
-        $url = $this->config['host'] ?? $this->host.$action;
+        $url           = $this->config['host'] ?? $this->host . $action;
         $public_params = [
             'app_id' => $this->config['app_id'],
         ];
@@ -43,36 +45,35 @@ class JolimarkClient extends BaseClient
         $resp = $this->httpRequest($method, $url, [
             'form_params' => $params,
         ]);
-
-        $this->debug($method.':'.$url, $params, $resp);
-
+        
         return $resp;
     }
 
     /**
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Exception
-     *
      * @return string
+     * @throws Exception
+     *
+     * @throws GuzzleException
      */
     protected function accessToken()
     {
-        $key = md5($this->config['app_id'].$this->config['app_key']);
-        if ($this->cache()->hasCache($key)) {
-            return $this->cache()->getCache($key);
+        
+        $key = md5($this->config['app_id'] . $this->config['app_key']);
+        if ($this->app->cache->hasCache($key)) {
+            return $this->app->cache->getCache($key);
         }
-        $time = Timer::timeStamp();
+        $time   = Timer::timeStamp();
         $params = [
             'time_stamp' => $time,
             'sign'       => $this->sign($time),
             'sign_type'  => 'MD5',
         ];
-        $resp = $this->request('GET', 'mcp/v2/sys/GetAccessToken', $params);
-        $data = json_decode($resp, true);
+        $resp   = $this->request('GET', 'mcp/v2/sys/GetAccessToken', $params);
+        $data   = json_decode($resp, true);
         if (empty($data['return_data']['access_token'])) {
             return $resp;
         }
-        $this->cache()->setCache($key, $data['return_data']['access_token'], $data['return_data']['expires_in']);
+        $this->app->cache->setCache($key, $data['return_data']['access_token'], $data['return_data']['expires_in']);
 
         return $data['return_data']['access_token'];
     }

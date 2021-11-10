@@ -2,6 +2,8 @@
 
 namespace whereof\cloudPrint\Xpyun;
 
+use Exception;
+use GuzzleHttp\Exception\GuzzleException;
 use whereof\cloudPrint\Kernel\BaseClient;
 use whereof\cloudPrint\Kernel\Support\Timer;
 
@@ -19,8 +21,8 @@ class XpyunClient extends BaseClient
      * @param $action
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Exception
+     * @throws GuzzleException
+     * @throws Exception
      *
      * @return string
      */
@@ -35,8 +37,6 @@ class XpyunClient extends BaseClient
         $params = array_filter(array_merge($public_params, $private_params));
         $url = $this->config['host'] ?? $this->host.'/'.$action;
         $resp = $this->httpPostJson($url, $params);
-        $this->debug('POST:'.$url, $params, $resp);
-
         return $resp;
     }
 

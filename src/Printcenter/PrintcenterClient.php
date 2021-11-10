@@ -2,6 +2,8 @@
 
 namespace whereof\cloudPrint\Printcenter;
 
+use Exception;
+use GuzzleHttp\Exception\GuzzleException;
 use whereof\cloudPrint\Kernel\BaseClient;
 
 /**
@@ -18,8 +20,8 @@ class PrintcenterClient extends BaseClient
      * @param $action
      * @param $private_params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Exception
+     * @throws GuzzleException
+     * @throws Exception
      *
      * @return string
      */
@@ -31,8 +33,6 @@ class PrintcenterClient extends BaseClient
         ];
         $params = array_filter(array_merge($public_params, $private_params));
         $resp = $this->httpPost($url, $params);
-        $this->debug('POST:'.$url, $params, $resp);
-
         return $resp;
     }
 }

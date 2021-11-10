@@ -7,6 +7,9 @@
 
 namespace whereof\cloudPrint\Tests;
 
+use whereof\cloudPrint\Zhongwuyun\AppContainer;
+use whereof\cloudPrint\Zhongwuyun\Printer;
+
 /**
  * Class FactoryTest.
  *
@@ -81,8 +84,8 @@ class FactoryTest extends BaseTest
     public function testZhongwuyun()
     {
         $app = $this->Zhongwuyun();
-        $this->assertInstanceOf(\whereof\cloudPrint\Zhongwuyun\AppContainer::class, $app);
+        $this->assertInstanceOf(AppContainer::class, $app);
         $printer = $app->printer;
-        $this->assertInstanceOf(\whereof\cloudPrint\Zhongwuyun\Printer::class, $printer);
+        $this->assertInstanceOf(Printer::class, $printer);
     }
 }

@@ -2,6 +2,8 @@
 
 namespace whereof\cloudPrint\Zhongwuyun;
 
+use Exception;
+use GuzzleHttp\Exception\GuzzleException;
 use whereof\cloudPrint\Kernel\BaseClient;
 use whereof\cloudPrint\Kernel\Support\Timer;
 
@@ -20,8 +22,8 @@ class ZhongwuyunClient extends BaseClient
      * @param $private_params
      * @param bool $is_get
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Exception
+     * @throws GuzzleException
+     * @throws Exception
      *
      * @return string
      */
@@ -41,8 +43,6 @@ class ZhongwuyunClient extends BaseClient
             $methed = 'POST';
             $resp = $this->httpPost($url, $params);
         }
-        $this->debug($methed.':'.$url, $params, $resp);
-
         return $resp;
     }
 
