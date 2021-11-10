@@ -11,6 +11,7 @@ use Pimple\Container;
  * @package whereof\cloudPrint\Kernel
  *
  * @property Clients\CacheClient cache
+ * @property Clients\LoggerClient logger
  */
 class ServiceContainer extends Container
 {
@@ -50,12 +51,12 @@ class ServiceContainer extends Container
             'http' => [
                 'timeout' => 30.0,
             ],
-//            'http_log' => [
-//                'enable' => true,
-//            ],
 //            'cache'    => [
 //                'prefix' => 'cloud_print',
 //                'path'   => './.runtime/cache',
+//            ],
+//            'logger'   => [
+//                'logfile' => './.runtime/logger/' . date('Y-m-d') . '.log',
 //            ]
         ];
 

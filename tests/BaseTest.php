@@ -11,6 +11,7 @@ use Mockery;
 use Mockery\Mock;
 use PHPUnit\Framework\TestCase;
 use whereof\cloudPrint\Factory;
+use whereof\cloudPrint\Kernel\BaseClient;
 use whereof\cloudPrint\Zhongwuyun\AppContainer;
 
 /**
@@ -33,6 +34,7 @@ class BaseTest extends TestCase
      */
     public function mockApiClient($name, $app)
     {
+        BaseClient::$request_log = true;
         $client = Mockery::mock($name, [$app])->makePartial();
 
         return $client;

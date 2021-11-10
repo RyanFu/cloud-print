@@ -2,9 +2,6 @@
 
 namespace whereof\cloudPrint\Kernel;
 
-use whereof\cloudPrint\Kernel\Interfaces\CacheInterface;
-use whereof\Helper\ArrayHelper;
-use whereof\Logger\Logger;
 
 /**
  * Class BaseClient.
@@ -18,6 +15,11 @@ class BaseClient
     protected $app;
 
     /**
+     * @var bool
+     */
+    public static $request_log = false;
+
+    /**
      * @var array
      */
     protected $config = [];
@@ -29,7 +31,17 @@ class BaseClient
      */
     public function __construct(ServiceContainer $app)
     {
-        $this->app = $app;
+        $this->app    = $app;
         $this->config = $app->getConfig();
+    }
+
+    /**
+     * @param $message
+     * @param $request
+     * @param $response
+     */
+    public function requestLog($message, $request, $response)
+    {
+        BaseClient::$request_log && $this->app->logger->debug($message, ['request' => $request, 'response' => $response]);
     }
 }

@@ -22,27 +22,28 @@ class ZhongwuyunClient extends BaseClient
      * @param $private_params
      * @param bool $is_get
      *
-     * @throws GuzzleException
+     * @return string
      * @throws Exception
      *
-     * @return string
+     * @throws GuzzleException
      */
     public function request($action, $private_params, $is_get = false)
     {
-        $public_params = [
+        $public_params  = [
             'appid'     => $this->config['appid'],
             'timestamp' => Timer::timeStamp(),
         ];
-        $params = array_filter(array_merge($public_params, $private_params));
+        $params         = array_filter(array_merge($public_params, $private_params));
         $params['sign'] = $this->sign($params);
-        $url = $this->config['host'] ?? $this->host.'/'.$action;
+        $url            = $this->config['host'] ?? $this->host . '/' . $action;
         if ($is_get) {
             $methed = 'GET';
-            $resp = $this->httpGet($url, $params);
+            $resp   = $this->httpGet($url, $params);
         } else {
             $methed = 'POST';
-            $resp = $this->httpPost($url, $params);
+            $resp   = $this->httpPost($url, $params);
         }
+        $this->requestLog($methed . ':' . $url, $params, $resp);
         return $resp;
     }
 
@@ -56,7 +57,7 @@ class ZhongwuyunClient extends BaseClient
         $str = '';
         ksort($params);
         foreach ($params as $k => $v) {
-            $str .= $k.$v;
+            $str .= $k . $v;
         }
         $str .= $this->config['appsecret'];
 

@@ -10,6 +10,7 @@ namespace whereof\cloudPrint\Kernel;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 use whereof\cloudPrint\Kernel\Clients\CacheClient;
+use whereof\cloudPrint\Kernel\Clients\LoggerClient;
 
 class ServiceProvider implements ServiceProviderInterface
 {
@@ -25,6 +26,9 @@ class ServiceProvider implements ServiceProviderInterface
     {
         $app['cache'] = function ($app) {
             return new CacheClient($app);
+        };
+        $app['logger'] = function ($app) {
+            return new LoggerClient($app);
         };
     }
 

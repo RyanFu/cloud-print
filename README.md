@@ -29,6 +29,12 @@ composer require whereof/cloud-print
 ~~~~
 
 
+## 请求日志开启
+~~~
+\whereof\cloudPrint\Kernel\BaseClient::$request_log=true;
+~~~
+
+
 ## 案例
 
 ### 基于[365智能云打印](http://printcenter.cn/)的 PHP 接口组件

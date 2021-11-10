@@ -33,6 +33,7 @@ class PrintcenterClient extends BaseClient
         ];
         $params = array_filter(array_merge($public_params, $private_params));
         $resp = $this->httpPost($url, $params);
+        $this->requestLog('POST:' . $url, $params, $resp);
         return $resp;
     }
 }

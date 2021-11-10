@@ -42,7 +42,7 @@ class UshengyunClient extends BaseClient
         $resp = $this->httpPostJson($url, [
             'form_params' => $params,
         ]);
-
+        $this->requestLog('POST:' . $url, $params, $resp);
         return $resp;
     }
 

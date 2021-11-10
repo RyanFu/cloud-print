@@ -21,14 +21,14 @@ class YilianyunClient extends BaseClient
      * @param $action
      * @param $private_params
      *
-     * @throws GuzzleException
+     * @return string
      * @throws Exception
      *
-     * @return string
+     * @throws GuzzleException
      */
     public function request($action, $private_params)
     {
-        $timestamp = Timer::timeStamp();
+        $timestamp     = Timer::timeStamp();
         $public_params = [
             'client_id' => $this->config['client_id'],
             'sign'      => $this->sign($timestamp),
@@ -38,21 +38,22 @@ class YilianyunClient extends BaseClient
         if ($action != 'oauth/oauth') {
             $public_params['access_token'] = $this->accessToken();
         }
-        $url = $this->buildHost($action);
+        $url    = $this->buildHost($action);
         $params = array_filter(array_merge($public_params, $private_params));
-        $resp = $this->httpPost($url, $params);
+        $resp   = $this->httpPost($url, $params);
+        $this->requestLog('POST:' . $url, $params, $resp);
         return $resp;
     }
 
     /**
-     * @throws GuzzleException
+     * @return string
      * @throws Exception
      *
-     * @return string
+     * @throws GuzzleException
      */
     protected function accessToken()
     {
-        $key = md5($this->config['client_id'].$this->config['client_secret']);
+        $key = md5($this->config['client_id'] . $this->config['client_secret']);
         if ($this->app->cache->hasCache($key)) {
             return $this->app->cache->getCache($key);
         }
@@ -60,8 +61,8 @@ class YilianyunClient extends BaseClient
             'grant_type' => 'client_credentials',
             'scope'      => 'all',
         ];
-        $resp = $this->request('oauth/oauth', $params);
-        $data = json_decode($resp, true);
+        $resp   = $this->request('oauth/oauth', $params);
+        $data   = json_decode($resp, true);
         if (empty($data['body']['access_token'])) {
             return $resp;
         }
@@ -77,7 +78,7 @@ class YilianyunClient extends BaseClient
      */
     protected function buildHost($action)
     {
-        return $this->config['host'] ?? $this->host.$action;
+        return $this->config['host'] ?? $this->host . $action;
     }
 
     /**
@@ -87,7 +88,7 @@ class YilianyunClient extends BaseClient
      */
     protected function sign($timestamp)
     {
-        return md5($this->config['client_id'].$timestamp.$this->config['client_secret']);
+        return md5($this->config['client_id'] . $timestamp . $this->config['client_secret']);
     }
 
     /**
@@ -97,10 +98,10 @@ class YilianyunClient extends BaseClient
     {
         $chars = md5(uniqid(mt_rand(), true));
 
-        return substr($chars, 0, 8).'-'
-            .substr($chars, 8, 4).'-'
-            .substr($chars, 12, 4).'-'
-            .substr($chars, 16, 4).'-'
-            .substr($chars, 20, 12);
+        return substr($chars, 0, 8) . '-'
+            . substr($chars, 8, 4) . '-'
+            . substr($chars, 12, 4) . '-'
+            . substr($chars, 16, 4) . '-'
+            . substr($chars, 20, 12);
     }
 }

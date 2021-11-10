@@ -37,6 +37,7 @@ class XpyunClient extends BaseClient
         $params = array_filter(array_merge($public_params, $private_params));
         $url = $this->config['host'] ?? $this->host.'/'.$action;
         $resp = $this->httpPostJson($url, $params);
+        $this->requestLog('POST:' . $url, $params, $resp);
         return $resp;
     }
 

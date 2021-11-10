@@ -40,7 +40,7 @@ class PoscomClient extends BaseClient
         $resp = $this->httpRequest($method, $url, [
             'form_params' => $params,
         ]);
-
+        $this->requestLog($method . ':' . $url, $params, $resp);
         return $resp;
     }
 

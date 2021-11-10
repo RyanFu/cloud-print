@@ -17,15 +17,15 @@ class Kuaidi100Client extends BaseClient
      * @param $action
      * @param $private_params
      *
-     * @throws GuzzleException
+     * @return string
      * @throws Exception
      *
-     * @return string
+     * @throws GuzzleException
      */
     public function request($url, $action, $private_params)
     {
         $timestamp = Timer::timeStamp();
-        $params = [
+        $params    = [
             'method' => $action,
             'key'    => $this->config['key'],
             'sign'   => $this->sign($private_params, $timestamp),
@@ -34,11 +34,12 @@ class Kuaidi100Client extends BaseClient
         ];
         if ($action == 'imgOrder') {
             $methed = 'GET';
-            $resp = $this->httpGet($url, $params, ['Content-Type' => 'multipart/form-data']);
+            $resp   = $this->httpGet($url, $params, ['Content-Type' => 'multipart/form-data']);
         } else {
             $methed = 'POST';
-            $resp = $this->httpPost($url, $params);
+            $resp   = $this->httpPost($url, $params);
         }
+        $this->requestLog($methed . ':' . $url, $params, $resp);
         return $resp;
     }
 
@@ -50,6 +51,6 @@ class Kuaidi100Client extends BaseClient
      */
     protected function sign($param, $t)
     {
-        return strtoupper(md5(json_encode($param).$t.$this->config['key'].$this->config['secret']));
+        return strtoupper(md5(json_encode($param) . $t . $this->config['key'] . $this->config['secret']));
     }
 }

@@ -45,7 +45,7 @@ class JolimarkClient extends BaseClient
         $resp = $this->httpRequest($method, $url, [
             'form_params' => $params,
         ]);
-        
+        $this->requestLog($method . ':' . $url, $params, $resp);
         return $resp;
     }
 
@@ -57,7 +57,7 @@ class JolimarkClient extends BaseClient
      */
     protected function accessToken()
     {
-        
+
         $key = md5($this->config['app_id'] . $this->config['app_key']);
         if ($this->app->cache->hasCache($key)) {
             return $this->app->cache->getCache($key);
