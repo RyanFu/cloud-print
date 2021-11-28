@@ -11,13 +11,27 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 
+/**
+ * @author zhiqiang
+ * Trait HttpClient
+ * @package whereof\cloudPrint\Kernel
+ */
 trait HttpClient
 {
+
+    /**
+     * @var array
+     */
+    protected $guzzleConfig = [
+        'headers'=>[
+            'User-Agent' => 'cloud-print (https://github.com/whereof/cloud-print)',
+        ]
+    ];
+
     /**
      * @param string $url
      * @param array $query
      * @param array $headers
-     *
      * @return string
      * @throws GuzzleException
      */
@@ -33,12 +47,12 @@ trait HttpClient
 
     /**
      * @param string $url
-     * @param array  $params
-     * @param array  $headers
-     *
-     * @throws GuzzleException
+     * @param array $params
+     * @param array $headers
      *
      * @return string
+     * @throws GuzzleException
+     *
      */
     protected function httpPost(string $url, array $params = [], array $headers = [])
     {
@@ -46,18 +60,15 @@ trait HttpClient
             'headers'     => $headers,
             'form_params' => $params,
         ];
-
         return $this->httpRequest('POST', $url, $options);
     }
 
     /**
      * @param string $url
-     * @param array  $params
-     * @param array  $headers
-     *
-     * @throws GuzzleException
-     *
+     * @param array $params
+     * @param array $headers
      * @return string
+     * @throws GuzzleException
      */
     protected function httpPostJson(string $url, array $params = [], array $headers = [])
     {
@@ -74,9 +85,9 @@ trait HttpClient
      * @param $url
      * @param $options
      *
+     * @return string
      * @throws GuzzleException
      *
-     * @return string
      */
     protected function httpRequest($method, $url, $options)
     {
@@ -93,6 +104,6 @@ trait HttpClient
         if (!class_exists(Client::class)) {
             throw new InvalidArgumentException('Not installed guzzlehttp/guzzle');
         }
-        return new Client($this->config['http'] ?? []);
+        return new Client(array_merge($this->config['http'], $this->guzzleConfig));
     }
 }
